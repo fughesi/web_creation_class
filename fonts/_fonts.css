@@ -1,0 +1,37 @@
+@font-face {
+  font-family: "oswald";
+  src:
+    local("oswald"),
+    url("./oswald/Oswald.ttf") format("TrueType");
+  src:
+    local("oswald"),
+    url("./oswald/Oswald-ExtraLight.ttf") format("TrueType");
+  src:
+    local("oswald"),
+    url("./oswald/Oswald-Bold.ttf") format("TrueType");
+}
+
+@font-face {
+  font-family: "adventpro";
+  src:
+    local("adventpro"),
+    url("./advent-pro/adventpro-light.ttf") format("TrueType");
+  src:
+    local("adventpro"),
+    url("./advent-pro/adventpro.ttf") format("TrueType");
+  src:
+    local("adventpro"),
+    url("./advent-pro/adventpro-bold.ttf") format("TrueType");
+}
+
+@font-face {
+  font-family: "caviar";
+  src:
+    local("CaviarDreams"),
+    url("./Caviar-Dreams/CaviarDreams_Italic.ttf") format("TrueType");
+  src:
+    local("CaviarDreams"),
+    url("./Caviar-Dreams/CaviarDreams.ttf") format("TrueType");
+}
+
+/* https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face */

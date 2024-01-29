@@ -1,0 +1,47 @@
+#footer {
+  width: 100vw;
+  height: max-content;
+  padding-bottom: 3rem;
+
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(150px, 250px));
+  grid-template-rows: max-content;
+  place-content: center;
+
+  background-color: var(--black);
+}
+
+#footer > div {
+  height: 100%;
+  width: 100%;
+
+  padding: 2rem;
+}
+
+#footer > div p {
+  margin: 0;
+
+  color: var(--color3);
+  font-size: var(--size5);
+  font-weight: bold;
+}
+
+#footer > div ul {
+  margin: 0;
+  padding: 0;
+}
+
+#footer > div a {
+  margin: 1rem 0.5rem;
+
+  color: var(--color2);
+  font-size: var(--size4);
+
+  transition: all 1s ease;
+}
+
+#footer > div a:hover,
+#footer > div a:focus {
+  color: var(--accent1);
+  text-decoration: underline;
+}

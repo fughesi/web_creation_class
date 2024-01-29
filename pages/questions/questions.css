@@ -1,0 +1,28 @@
+@import url("../../styles.css");
+
+.questionContainer {
+  display: grid;
+  place-content: center;
+}
+
+#FAQ {
+  width: max-content;
+}
+
+#FAQ > div p:nth-child(1) {
+  margin: 0.2em 0;
+
+  color: var(--color2);
+  font-size: var(--size6);
+  font-family: var(--font3);
+}
+
+#FAQ > div p:nth-child(2) {
+  margin: 0;
+  padding-left: 0.75em;
+
+  background-color: var(--color2);
+  color: var(--color3);
+  font-size: var(--size4);
+  font-family: var(--font1);
+}

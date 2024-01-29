@@ -1,0 +1,103 @@
+#cardCatalogue {
+  width: 100%;
+  margin-bottom: 5rem;
+
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 400px));
+  place-content: center;
+  gap: 1rem;
+}
+
+.cardItem {
+  position: relative;
+  padding: 0.75rem;
+  overflow: hidden;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+
+  width: 100%;
+  min-height: 25rem;
+
+  background-color: var(--color2);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+
+  box-shadow: var(--shadow2);
+}
+
+.cardItem > img {
+  position: absolute;
+  z-index: 0;
+  top: 0;
+  left: 0;
+
+  width: 100%;
+  object-fit: cover;
+  transition: all 2s ease;
+}
+
+.cardItem > img:hover {
+  scale: 1.25;
+}
+
+.cardItem > p {
+  color: var(--black);
+  text-shadow: var(--outline1);
+}
+
+.saleItem {
+  position: absolute;
+  top: 0.5rem;
+  right: 0.5rem;
+  z-index: 2;
+
+  padding: 1.5rem;
+  border-radius: 50%;
+
+  font-size: var(--size5);
+  font-weight: bold;
+  font-family: "caviar";
+  color: var(--color2);
+  background-color: var(--accent1);
+}
+
+.itemCardName {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  z-index: 2;
+
+  padding: 0.5rem;
+  margin: 0.5rem;
+  color: var(--black);
+  text-shadow: var(--shadow3);
+  backdrop-filter: blur(15px);
+  box-shadow: var(--shadow3);
+}
+
+.itemPrice {
+  z-index: 2;
+  margin: 0.2em 0;
+  font-size: var(--size6);
+}
+
+.itemStyle {
+  font-size: 1rem;
+  margin: 0;
+}
+
+.itemName {
+  margin: 0.2em 0;
+  font-size: var(--size6);
+  font-family: var(--font1);
+}
+
+.itemMaterial {
+  margin: 0.2em 0;
+  font-size: var(--size3);
+  font-family: var(--font1);
+  text-shadow: none;
+}

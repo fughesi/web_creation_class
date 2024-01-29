@@ -1,0 +1,12 @@
+.reuseableButton {
+  background-color: var(--color5);
+  color: var(--color2);
+  padding: 1rem 2rem;
+  text-decoration: none;
+}
+
+.callToAction {
+  background-color: var(--color2);
+  color: var(--color5);
+  width: 555px;
+}
