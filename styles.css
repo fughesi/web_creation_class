@@ -65,7 +65,7 @@ body {
   margin: 0;
 
   background-color: var(--color1);
-  color: var(--color5);
+  color: var(--black);
   font-family: var(--font2), sans-serif;
 
   overflow-x: hidden;

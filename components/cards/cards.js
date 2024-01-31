@@ -2,7 +2,7 @@ import { inventory } from "../../lib/inventory.js";
 
 const catalogue = document.getElementById("cardCatalogue");
 
-export const cards = inventory.watches.map((item) => {
+export const cards = inventory.wallets.map((item) => {
   return (catalogue.innerHTML += `
 <div class="cardItem" id=${item.sku} >
   <img src=${item.urls[0]} || "media/404.jpg"})" alt="${item.alts[0] || ""}"></img>
@@ -15,7 +15,7 @@ export const cards = inventory.watches.map((item) => {
     ${item.name || ""}
     </span>
     </p>
-    <p class=${item.material ? "itemMaterial" : "none"}>${item.pattern || ""} ${item.material || ""}  ${item.style || ""}</p>
+    <p class=${item.material ? "itemMaterial" : "none"}>${item.pattern || ""} ${item.material || ""} ${item.style || ""} ${item.type || ""} ${item.brand ? "by " + item.brand : ""}</p>
   </div>
 </div>
 `);

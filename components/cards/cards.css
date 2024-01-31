@@ -51,12 +51,14 @@
 .saleItem {
   position: absolute;
   top: 0.5rem;
-  right: 0.5rem;
+  right: -5rem;
   z-index: 2;
 
-  padding: 1.5rem;
-  border-radius: 50%;
+  padding: 1.5rem 3.5rem;
+  width: 300px;
+  rotate: 45deg;
 
+  text-align: center;
   font-size: var(--size5);
   font-weight: bold;
   font-family: "caviar";

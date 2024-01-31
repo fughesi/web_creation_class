@@ -4,11 +4,11 @@ export const navbar = (nav) => {
   if (navElement) {
     navElement.innerHTML += `
     <ul class="desktopNavbar">
-      <li><a href="#">stuff</a></li>
-      <li><a href="#">things</a></li>
-      <li><a href="#">junk</a></li>
-      <li><a href="#">mooch</a></li>
-      <li><a href="#">more</a></li>
+      <li><a href="../../pages/blogs/blogs.html">blogs</a></li>
+      <li><a href="../../pages/questions/questions.html">questions</a></li>
+      <li><a href="#">navlink</a></li>
+      <li><a href="#">navlink</a></li>
+      <li><a href="#">navlink</a></li>
     </ul>
 `;
   }

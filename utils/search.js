@@ -7,21 +7,21 @@ export function search(e, elem, iter) {
             i.question.toLowerCase().includes(value) ||
             i.answer.toLowerCase().includes(value),
         )
-        .map((i, index) => {
+        .map((i) => {
           return `
             <div>
-              <p class=${index}>${i.question}</p>
+              <p>${i.question}</p>
               <p>${i.answer}</p>
             </div>
             `;
         })
         .join(""))
     : (elem.innerHTML = iter
-        ?.map((i, index) => {
+        ?.map((i) => {
           return `
             <div>
-              <p class=${index}>${i.question}</p>
-              <p>${i.answer}</p>
+              <p>${i.question || i.title}</p>
+              <p>${i.answer || i.content}</p>
             </div>
             `;
         })
