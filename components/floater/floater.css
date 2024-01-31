@@ -1,17 +1,21 @@
 .floatbarContainer {
   position: fixed;
-  inset: 90vh auto auto auto;
+  inset: auto 0 -8rem auto;
   z-index: 3;
 
-  margin: 0 2rem 2rem;
   padding: 1rem 2rem;
 
   width: min-content;
-  height: min-content;
+  height: 14rem;
 
   color: var(--color4);
+  box-shadow: var(--shadow4);
   background-color: var(--color2);
-  box-shadow: var(--shadow3);
+  border-radius: 1.5rem 0 0 0;
+
+  cursor: pointer;
+  user-select: none;
+  transition: all 1500ms ease;
 }
 
 .floatbarContainer ul {
@@ -21,4 +25,9 @@
 
 .floatbarContainer ul li {
   font-size: 2rem;
+}
+
+.floatbarContainer:hover {
+  transform: translateY(-8rem);
+  box-shadow: var(--shadow5);
 }
