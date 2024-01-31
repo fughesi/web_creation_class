@@ -1,16 +1,12 @@
 import { answers } from "../../lib/answers.js";
+import { search } from "../../utils/search.js";
 
-const elem = document.getElementById("FAQ");
+const element = document.getElementById("FAQ");
+const searchBar = document.getElementById("searchBar");
 
-const FAQ = answers
-  .map((i, index) => {
-    return `
-<div>
-  <p class=${index}>${i.question}</p>
-  <p>${i.answer}</p>
-</div>
-`;
-  })
-  .join("");
+window.addEventListener("load", (e) => search(e, element, answers));
+searchBar.addEventListener("input", (e) => search(e, element, answers));
 
-elem.innerHTML = FAQ;
+// docs
+// https://developer.mozilla.org/en-US/docs/Web/API/EventTarget/addEventListener
+// https://developer.mozilla.org/en-US/docs/Web/API/Window/load_event
