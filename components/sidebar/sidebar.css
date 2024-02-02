@@ -1,0 +1,43 @@
+#indexSidebar {
+  position: absolute;
+  z-index: 10;
+  top: 5rem;
+  display: flex;
+  flex-direction: column;
+
+  padding: 1rem 2rem;
+
+  transform: translateX(-11rem);
+  color: var(--color2);
+  background-color: var(--color3);
+  transition: all 500ms linear;
+}
+
+#indexSidebar::after {
+  content: "⨠";
+  position: absolute;
+  top: 0.1px;
+  right: -4.95rem;
+
+  width: 5rem;
+  height: 5rem;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  color: var(--color2);
+  background-color: var(--color3);
+}
+
+#indexSidebar p {
+  font-size: var(--size5);
+}
+
+.moveSidebar {
+  transform: translateX(0) !important;
+}
+
+.moveSidebar::after {
+  rotate: 180 !important;
+}

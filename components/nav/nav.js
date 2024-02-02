@@ -3,13 +3,13 @@ export const navbar = (nav) => {
 
   if (navElement) {
     navElement.innerHTML += `
-    <ul class="desktopNavbar">
-      <li><a href="../../pages/blogs/blogs.html">blogs</a></li>
-      <li><a href="../../pages/questions/questions.html">questions</a></li>
-      <li><a href="#">navlink</a></li>
-      <li><a href="#">navlink</a></li>
-      <li><a href="#">navlink</a></li>
-    </ul>
+    <div class="desktopNavbar">
+      <a href="../../pages/blogs/blogs.html">blogs</a>
+      <a href="../../pages/questions/questions.html">questions</a>
+      <a href="#">navlink</a>
+      <a href="#">navlink</a>
+      <a href="#">navlink</a>
+    </div>
 `;
   }
 };

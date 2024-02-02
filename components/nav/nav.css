@@ -1,25 +1,27 @@
+#nav {
+  position: relative;
+}
+
 .desktopNavbar {
-  padding: 0;
+  position: absolute;
+  top: 1rem;
+  right: 10%;
+  z-index: 5;
+
   display: flex;
   justify-content: space-evenly;
 
-  font-variant: small-caps;
+  /* font-variant: small-caps; */
 }
 
-.desktopNavbar li a {
-  color: var(--color4);
-  font-size: var(--size9);
+.desktopNavbar a {
+  padding: 0 1rem;
+  color: var(--color2);
+  font-size: var(--size7);
   transition: color 250ms;
+  mix-blend-mode: color-burn;
 }
 
-.desktopNavbar li a:hover {
+.desktopNavbar a:hover {
   color: var(--accent1);
-}
-
-.container {
-  width: 100vw;
-  min-height: 100vh;
-
-  display: grid;
-  place-content: center;
 }

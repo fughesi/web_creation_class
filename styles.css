@@ -4,6 +4,7 @@
 @import url("./components/nav/nav.css");
 @import url("./components/element/element.css");
 @import url("./components/floater/floater.css");
+@import url("./components/sidebar/sidebar.css");
 
 :root {
   /* COLORS */
@@ -47,6 +48,11 @@
   --shadow3: 1px 3px 3px var(--grey4), -1px -1px 1px var(--grey1);
   --shadow4: 5px 2px 2px var(--black), 22px -2px 10px var(--black);
   --shadow5: 1px 1px 1px var(--black), 18px -1px 4px var(--grey4);
+  --shadow6: 0px 0px 1.5px var(--black);
+
+  /* RADIUS */
+  --radius1: 2rem;
+  --radius2: 0.75rem;
 
   /* OUTLINE */
   --outline1: 1px 0 0 var(--white), -1px 0 0 var(--white), 0 1px 0 var(--white),
@@ -63,6 +69,8 @@
 }
 
 body {
+  position: relative;
+
   opacity: 0;
   margin: 0;
 
@@ -100,11 +108,17 @@ li {
   display: none;
 }
 
-.highlight {
-  display: inline-block;
-  padding: 0.25em;
-  background: var(--highlight);
-  color: var(--white);
+.indexContainer {
+  position: relative;
+  width: 100vw;
+  display: grid;
+  grid-template-columns: 1fr;
+}
+
+.hero {
+  height: 100vh;
+  width: 100%;
+  background-color: var(--color4);
 }
 
 @keyframes fade {

@@ -3,22 +3,28 @@ import { inventory } from "../../lib/inventory.js";
 const catalogue = document.getElementById("cardCatalogue");
 
 export const cards = inventory.watches.map((item) => {
-  return (catalogue.innerHTML += `
-<div class="cardItem" id=${item.sku} >
+  return catalogue
+    ? (catalogue.innerHTML += `
+<div class="cardItem ${item.name || ""}" id=${item.sku} >
   <img src=${item.urls[0]} || "media/404.jpg"})" alt="${item.alts[0] || ""}"></img>
   <p class=${item.sale ? "saleItem" : "none"}>SAVE %</p>
   <p class=${item.price ? "itemPrice" : "none"}>$${item.price || ""}</p>
 
   <div class="itemCardName">
     <p class=${item.name ? "itemName" : "none"}>
-    <span class="highlight">
-    ${item.name || ""}
-    </span>
+      <span class="highlight">
+        The ${item.name || ""}
+      </span>
     </p>
-    <p class=${item.material ? "itemMaterial" : "none"}>${item.pattern || ""} ${item.material || ""} ${item.style || ""} ${item.type || ""} ${item.brand ? "by " + item.brand : ""}</p>
+    <p class=${item.material ? "itemMaterial" : "none"}>
+      <span class="highlight">
+       ${item.material || ""} ${item.style || ""} ${item.type || ""} ${item.brand ? "by " + item.brand : ""}
+      </span>
+  </p>
   </div>
 </div>
-`);
+`)
+    : "";
 });
 
 // docs

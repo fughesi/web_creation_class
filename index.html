@@ -7,23 +7,28 @@
     <link href="styles.css" rel="stylesheet" />
     <link rel="icon" type="image/x-icon" href="./media/favicon.webp" />
     <script src="main.js" type="module" defer></script>
-    <script src="lib/enums.js"></script>
+    <script src="utils/toggle.js" defer></script>
   </head>
   <body>
-    <main class="container indexContainer">
+    <main class="indexContainer">
       <nav id="nav"></nav>
+      <aside
+        id="indexSidebar"
+        onclick="toggle('indexSidebar', 'moveSidebar')"
+      ></aside>
+      <section class="hero">
+        <div id="cardCatalogue" class="watches"></div>
+      </section>
 
-      <div id="cardCatalogue"></div>
-
-      <custom-elem
-        elem="cta"
-        msg="this is just an alert"
-        text="stuff"
-      ></custom-elem>
+      <!-- <custom-elem -->
+      <!--   elem="cta" -->
+      <!--   msg="this is just an alert" -->
+      <!--   text="stuff" -->
+      <!-- ></custom-elem> -->
 
       <!-- <custom-elem elem="button" text="ashley"></custom-elem> -->
-
-      <footer id="footer"></footer>
     </main>
+
+    <footer id="footer"></footer>
   </body>
 </html>

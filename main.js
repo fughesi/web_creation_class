@@ -4,10 +4,12 @@ import { signature } from "./lib/signature.js";
 import { cards } from "./components/cards/cards.js";
 import { footer } from "./components/footer/footer.js";
 import { floater } from "./components/floater/floater.js";
+import { sidebar } from "./components/sidebar/sidebar.js";
 
+sidebar;
 floater();
 signature();
 footer();
-cards; // make inventory card on element div#cardCatalogue
-navbar("nav"); // make navbar on element nav#nav
+cards;
+navbar("nav");
 reuseableComponent;
