@@ -116,13 +116,44 @@ li {
 }
 
 .hero {
+  position: relative;
+  display: grid;
+  grid-template-columns: 333px, repeat(auto-fit, minmax(50, 1fr));
+  grid-auto-flow: dense;
+  place-content: center;
+
   height: 100vh;
   width: 100%;
   background-color: var(--color4);
+}
+
+.heroElements div {
+  width: 100px;
+  height: 100px;
+  outline: 1px solid orange;
+  border-radius: var(--radius1);
+}
+
+.heroElements:nth-child(1) {
+  width: 333px;
+  height: 333px;
+  top: 33%;
+  left: 33%;
+  background-color: red;
+  border-radius: var(--radius1);
 }
 
 @keyframes fade {
   100% {
     opacity: 1;
   }
+}
+
+.observe {
+  width: 333px;
+  height: 333px;
+  outline: 1px solid grey;
+  background-color: red;
+  transform: translateX(500px);
+  transition: all 1500ms ease;
 }

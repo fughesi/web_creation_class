@@ -28,7 +28,7 @@ class ReuseableComponent extends HTMLElement {
 
       default:
         console.log(
-          "Must provide an 'elem' prop with one of the following elements: ['button', 'floatbar', 'cta']",
+          "Must provide an 'elem' prop with one of the following elements: ['button', 'cta']",
         );
     }
   }

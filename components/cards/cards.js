@@ -1,10 +1,13 @@
 import { inventory } from "../../lib/inventory.js";
 
-const catalogue = document.getElementById("cardCatalogue");
+const cards = (idx, elem) => {
+  const catalogue = document.getElementById(elem);
 
-export const cards = inventory.watches.map((item) => {
-  return catalogue
-    ? (catalogue.innerHTML += `
+  catalogue.setAttribute("name", inventory[idx][idx]?.type || "");
+
+  inventory[idx]?.map((item) => {
+    return catalogue
+      ? (catalogue.innerHTML += `
 <div class="cardItem ${item.name || ""}" id=${item.sku} >
   <img src=${item.urls[0]} || "media/404.jpg"})" alt="${item.alts[0] || ""}"></img>
   <p class=${item.sale ? "saleItem" : "none"}>SAVE %</p>
@@ -24,9 +27,15 @@ export const cards = inventory.watches.map((item) => {
   </div>
 </div>
 `)
-    : "";
-});
+      : "Segfault on cards.js!";
+  });
+};
+
+export const inventoryCards = (idx, elem) => {
+  cards(idx, elem);
+};
 
 // docs
 // https://www.w3schools.com/jsref/jsref_map.asp
 // https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Conditional_operator
+// https://developer.mozilla.org/en-US/docs/Web/API/Element/setAttribute

@@ -1,8 +1,8 @@
 import { links } from "../../lib/links.js";
+import { SOCIALS } from "../../lib/enums.js";
 
-const footerElement = document.getElementById("footer");
-
-export const footer = () => {
+export const footer = (elem) => {
+  const footerElement = document.getElementById(elem);
   links.map((link) => {
     footerElement.innerHTML += `
 <div>

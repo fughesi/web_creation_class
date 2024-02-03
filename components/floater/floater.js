@@ -4,8 +4,8 @@ export const floater = () => {
 
   newDiv.classList.add("floatbarContainer");
   newDiv.appendChild(newContent);
-  newDiv.onclick = (e) => {
-    alert(e);
+  newDiv.onclick = () => {
+    alert("Epstein didn't kill himself");
   };
 
   document.body.appendChild(newDiv);
@@ -14,3 +14,4 @@ export const floater = () => {
 // docs
 // https://developer.mozilla.org/en-US/docs/Web/API/Document/createElement
 // https://developer.mozilla.org/en-US/docs/Web/API/Element/click_event
+// https://developer.mozilla.org/docs/Web/API/Document/createTextNode
