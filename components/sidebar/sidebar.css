@@ -17,17 +17,18 @@
   content: "⨠";
   position: absolute;
   top: 0.1px;
-  right: -4.95rem;
+  right: -3.9rem;
 
-  width: 5rem;
-  height: 5rem;
+  width: 4rem;
+  height: 4rem;
 
   display: flex;
   justify-content: center;
   align-items: center;
 
   color: var(--color2);
-  background-color: var(--color3);
+  background-color: inherit;
+  border-radius: 0 25px 25px 0;
 }
 
 #indexSidebar p {

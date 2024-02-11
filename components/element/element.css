@@ -1,3 +1,7 @@
+.elementDefault {
+  display: contents;
+}
+
 .reuseableButton {
   background-color: var(--color5);
   color: var(--color2);
@@ -9,4 +13,36 @@
   background-color: var(--color2);
   color: var(--color5);
   width: 555px;
+}
+
+.toggleSwitch {
+  display: flex;
+  align-items: center;
+  justify-content: left;
+  margin: 1rem;
+  padding: 1rem;
+
+  width: 6rem;
+  height: 2rem;
+
+  border-radius: 25px;
+  background-color: var(--white);
+  box-shadow: inset 1px 1px 5px var(--color3);
+  cursor: pointer;
+
+  transition: all 1500ms ease;
+}
+
+.toggleSwitch > span {
+  width: 1.5rem;
+  height: 1.5rem;
+
+  border-radius: 50%;
+  background-color: var(--color3);
+  box-shadow: 1px 1px 5px var(--color3);
+}
+
+.true {
+  background-color: var(--grey1);
+  justify-content: right;
 }

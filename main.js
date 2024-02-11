@@ -6,13 +6,17 @@ import { footer } from "./components/footer/footer.js";
 import { floater } from "./components/floater/floater.js";
 import { sidebar } from "./components/sidebar/sidebar.js";
 import { createObserver } from "./utils/observer.js";
+import { parallax } from "./utils/parallax.js";
 
 floater();
 signature();
+reuseableComponent;
+
+navbar("nav");
 footer("footer");
 sidebar("indexSidebar");
+
+parallax(".parallax", 0.05);
 inventoryCards(1, "watches");
 inventoryCards(0, "wallets");
-navbar("nav");
-reuseableComponent;
 createObserver(".observe", 0, 0.0);

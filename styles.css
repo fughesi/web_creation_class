@@ -130,7 +130,7 @@ li {
 .heroElements div {
   width: 100px;
   height: 100px;
-  outline: 1px solid orange;
+  background-color: var(--color2);
   border-radius: var(--radius1);
 }
 
@@ -152,7 +152,6 @@ li {
 .observe {
   width: 333px;
   height: 333px;
-  outline: 1px solid grey;
   background-color: red;
   transform: translateX(500px);
   transition: all 1500ms ease;
