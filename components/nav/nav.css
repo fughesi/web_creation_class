@@ -1,17 +1,25 @@
 #nav {
-  position: relative;
+  position: sticky;
+  top: 1rem;
+  z-index: 5;
+
+  margin: 2rem 0;
+  grid-area: a;
 }
 
 .desktopNavbar {
-  position: absolute;
-  top: 1rem;
   right: 10%;
-  z-index: 5;
+
+  width: max-content;
+  padding: 1rem 2rem;
 
   display: flex;
   justify-content: space-evenly;
 
-  /* font-variant: small-caps; */
+  font-variant: small-caps;
+  border-radius: 50px;
+  box-shadow: inset 0 0 5px var(--color2), var(--shadow2);
+  backdrop-filter: blur(15px);
 }
 
 .desktopNavbar a {

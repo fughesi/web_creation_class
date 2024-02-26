@@ -10,7 +10,7 @@ export function createObserver(elem, margin, stops) {
   const observer = new IntersectionObserver((entries) => {
     entries.forEach((entry) => {
       entry.isIntersecting
-        ? (entry.target.style.transform = "translate(0,0)")
+        ? (entry.target.style.transform = "translate(0,0) ")
         : "";
     });
   }, options);

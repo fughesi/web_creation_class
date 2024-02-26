@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>contact</title>
+    <link href="./contact.css" rel="stylesheet" />
+    <script src="./contact.js" type="module" defer></script>
+  </head>
+  <body>
+    <main class="contactContainer">
+      <h1>Stay in touch!!</h1>
+      <form class="contactForm" action="">
+        <fieldset>
+          <legend>SIGN UP</legend>
+          <label name="First&nbsp;Name" for="fname" data-input="label">
+            <input type="text" name="fname" id="fname" required />
+          </label>
+          <label name="Middle&nbsp;Initial" for="mi" data-input="label">
+            <input type="text" name="mi" id="mi" required />
+          </label>
+          <label name="Last&nbsp;Name" for="lname" data-input="label">
+            <input type="text" name="lname" id="lname" required />
+          </label>
+          <label name="Email&nbsp;Address" for="email" data-input="label">
+            <input type="email" name="email" id="email" required />
+          </label>
+
+          <label for="select" data-input="select">
+            How did you hear of us? <br />
+            <select name="select" id="select">
+              <optgroup label="Social Media">
+                <option value="Facebook">Facebook</option>
+                <option value="Twitter">Twitter / X</option>
+                <option value="Instagram">Instagram</option>
+                <option value="YouTube">YouTube</option>
+              </optgroup>
+
+              <optgroup label="Online">
+                <option value="Website">Website</option>
+                <option value="Affiliate">Affiliate Link</option>
+                <option value="Search">Internet Search</option>
+              </optgroup>
+
+              <optgroup label="Traditional">
+                <option value="WalkIn">Walk-in</option>
+                <option value="Friend">Friend</option>
+                <option value="Referral">Referred by business</option>
+              </optgroup>
+            </select>
+          </label>
+
+          <label for="submit">
+            <input type="submit" id="submitForm" class="observe" />
+          </label>
+        </fieldset>
+      </form>
+    </main>
+    <div id="footer"></div>
+  </body>
+</html>

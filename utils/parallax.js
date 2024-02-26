@@ -1,9 +1,14 @@
 export const parallax = (elem, speed) => {
-  const element = document.querySelector(elem);
+  const element = document.querySelectorAll(elem);
 
-  window.addEventListener("scroll", function () {
-    element.style.transform = `translateY(${window.scrollY * speed}px)`;
-  });
+  element
+    ? window.addEventListener("scroll", function () {
+        element.forEach(
+          (item) =>
+            (item.style.transform = `translateY(${window.scrollY * speed}px)`)
+        );
+      })
+    : console.log("need to provide element ID(#)/class(.) as first param");
 };
 
 // docs

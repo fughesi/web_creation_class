@@ -3,10 +3,29 @@
 .questionContainer {
   display: grid;
   place-content: center;
+
+  margin: auto;
+  width: 80vw;
+  min-height: 100svh;
+}
+
+.questionContainer h1 {
+  text-align: center;
+  font-size: var(--size9);
+}
+
+.FAQfieldset {
+  width: min-content;
+}
+
+.FAQfieldset > legend {
+  font-size: var(--size5);
+  color: var(--color5);
 }
 
 #FAQ {
   width: max-content;
+  margin: 5rem 2rem;
 }
 
 #FAQ > div p:nth-child(1) {

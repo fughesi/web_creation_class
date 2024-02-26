@@ -1,19 +1,29 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
   <head>
     <title>eCommerce Website - FAQs</title>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <link rel="icon" type="image/x-icon" href="../../media/favicon.webp" />
-    <!-- <link href="../../styles.css" rel="stylesheet" /> -->
     <link href="./questions.css" rel="stylesheet" />
     <script src="./questions.js" type="module" defer></script>
-    <script src="../../main.js" type="module" defer></script>
+    <!-- <script src="../../main.js" type="module" defer></script> -->
   </head>
   <body>
     <main class="questionContainer">
+      <div id="FAQnav"></div>
       <section class="search">
-        <input type="text" id="searchBar" />
+        <h1>FREQUENTLY ASKED QUESTIONS</h1>
+        <fieldset class="FAQfieldset">
+          <legend>Search Filter</legend>
+          <input
+            type="text"
+            id="searchBar"
+            class="FAQsearch"
+            name="searchBar"
+            placeholder="Type your search here..."
+          />
+        </fieldset>
       </section>
       <section id="FAQ"></section>
     </main>

@@ -1,0 +1,91 @@
+@import url(../../styles.css);
+
+.contactContainer {
+  display: grid;
+  grid-template: auto/auto;
+}
+
+.contactContainer h1 {
+  color: var(--accent1);
+  font-size: var(--size8);
+}
+
+.contactForm {
+  display: flex;
+  justify-content: center;
+
+  width: 40%;
+  padding: 2rem;
+
+  background-color: var(--grey4);
+  margin-top: 10rem;
+  margin-bottom: 15rem;
+}
+
+.contactForm legend {
+  font-weight: bold;
+  color: var(--accent1);
+  font-size: var(--size8);
+}
+
+.contactForm fieldset {
+  width: 90%;
+}
+
+.contactForm input {
+  padding: 2rem 1rem 1rem 1rem;
+  color: var(--grey1);
+  border-radius: 0.5rem;
+  border: 1px solid var(--grey1);
+  background-color: var(--grey3);
+  cursor: pointer;
+  font-size: var(--size5);
+}
+
+.contactForm label[data-input="label"] {
+  display: flex;
+  align-items: flex-start;
+  justify-content: start;
+  position: relative;
+  margin: 3rem 1rem;
+}
+
+.contactForm label[data-input="label"]::before {
+  position: absolute;
+  content: attr(name);
+  left: 2%;
+  padding: 0.2rem;
+  color: var(--accent1);
+  font-size: var(--size3);
+  width: min-content;
+  transform: translateY(0);
+
+  border-radius: 5px;
+  transition: all 250ms;
+}
+
+.contactForm label[data-input="label"]:has(input:focus)::before {
+  font-size: var(--size5);
+  transform: translateY(-100%);
+}
+
+.contactForm label[data-input="select"] {
+  color: var(--accent1);
+  font-size: var(--size6);
+}
+
+#submitForm,
+#select {
+  display: block;
+}
+
+#submitForm {
+  padding: 2rem;
+  margin-top: 2rem;
+  text-align: center;
+  transform: translateX(300px);
+}
+
+#select {
+  font-size: var(--size5);
+}

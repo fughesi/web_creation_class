@@ -3,14 +3,16 @@ import { inventory } from "../../lib/inventory.js";
 const cards = (idx, elem) => {
   const catalogue = document.getElementById(elem);
 
-  catalogue.setAttribute("name", inventory[idx][idx]?.type || "");
+  catalogue?.setAttribute("name", inventory[idx][idx]?.type || "");
 
   inventory[idx]?.map((item) => {
     return catalogue
       ? (catalogue.innerHTML += `
 <div class="cardItem ${item.name || ""}" id=${item.sku} >
-  <img src=${item.urls[0]} || "media/404.jpg"})" alt="${item.alts[0] || ""}"></img>
-  <p class=${item.sale ? "saleItem" : "none"}>SAVE %</p>
+  <img src=${item.urls[0]} || "media/404.jpg"})" alt="${
+          item.alts[0] || ""
+        }"></img>
+  <p class=${item.sale ? "saleItem" : "none"}>ON SALE!</p>
   <p class=${item.price ? "itemPrice" : "none"}>$${item.price || ""}</p>
 
   <div class="itemCardName">
@@ -21,7 +23,9 @@ const cards = (idx, elem) => {
     </p>
     <p class=${item.material ? "itemMaterial" : "none"}>
       <span class="highlight">
-       ${item.material || ""} ${item.style || ""} ${item.type || ""} ${item.brand ? "by " + item.brand : ""}
+       ${item.material || ""} ${item.style || ""} ${item.type || ""} ${
+          item.brand ? "by " + item.brand : ""
+        }
       </span>
   </p>
   </div>

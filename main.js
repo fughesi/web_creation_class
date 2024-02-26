@@ -14,7 +14,7 @@ reuseableComponent;
 
 navbar("nav");
 footer("footer");
-sidebar("indexSidebar");
+// sidebar("indexSidebar");
 
 parallax(".parallax", 0.05);
 inventoryCards(1, "watches");

@@ -1,6 +1,8 @@
 import { answers } from "../../lib/answers.js";
 import { search } from "../../utils/search.js";
+import { navbar } from "../../components/nav/nav.js";
 
+navbar("FAQnav");
 const element = document.getElementById("FAQ");
 const searchBar = document.getElementById("searchBar");
 
