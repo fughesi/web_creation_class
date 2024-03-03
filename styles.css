@@ -1,4 +1,5 @@
 @import url("./fonts/_fonts.css");
+@import url("./components/rating/rating.css");
 @import url("./components/cards/cards.css");
 @import url("./components/footer/footer.css");
 @import url("./components/nav/nav.css");
@@ -8,11 +9,17 @@
 
 :root {
   /* COLORS */
-  --color1: #fffcf2;
-  --color2: #ccc5b9;
-  --color3: #403d39;
-  --color4: #252422;
+  --color1: #5f8670;
+  --color2: #ff9800;
+  --color3: #b80000;
+  --color4: #820300;
   --color5: #ff5400;
+
+  /* --color1: #fffcf2; */
+  /* --color2: #ccc5b9; */
+  /* --color3: #403d39; */
+  /* --color4: #252422; */
+  /* --color5: #ff5400; */
 
   --white: #eeeeee;
   --black: #252422;
@@ -23,6 +30,7 @@
   --grey4: #333333;
 
   --accent1: #eb5e28;
+  /* --accent1: #eb5e28; */
 
   --highlight: #ffc10780;
 
@@ -62,12 +70,31 @@
   --blur: 3px;
 }
 
+@media (prefers-color-scheme: dark) {
+  :root {
+    --color1: #fffcf2;
+    --color2: #ccc5b9;
+    --color3: #403d39;
+    --color4: #252422;
+    --color5: #ff5400;
+
+    --accent1: #eb5e28;
+
+    --highlight: #ffc10780;
+  }
+}
+
 /* ** DEFAULTS START ** */
 
 *,
 *::before,
 *::after {
   box-sizing: border-box;
+}
+
+html {
+  color-scheme: dark light;
+  scroll-behavior: smooth;
 }
 
 body {
@@ -131,10 +158,6 @@ input {
 }
 
 /* ** DEFAULTS END ** */
-
-.indexContainer {
-  position: relative;
-}
 
 .hero {
   position: relative;
@@ -214,6 +237,8 @@ div:has(.imgparallax) {
 }
 
 .observe {
+  width: 250px;
+  height: 250px;
+  background-color: red;
   transition: all 1500ms ease;
-  transform: translateY(200px);
 }

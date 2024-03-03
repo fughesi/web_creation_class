@@ -1,5 +1,9 @@
 @import url("../../styles.css");
 
+#blogSection {
+  padding: 10rem 2rem 5rem;
+}
+
 #blogSection div p:first-child {
   margin: 2rem 0 0 0;
 

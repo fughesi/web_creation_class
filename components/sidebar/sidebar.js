@@ -1,12 +1,15 @@
 import { links } from "../../lib/links.js";
 
 export const sidebar = (elem) => {
-  const sidebarElem = document.getElementById(elem);
-  sidebarElem.innerHTML = links
-    ?.map((i) => {
-      return `
+  const sidebarElem = document.getElementById(String(elem));
+
+  sidebarElem
+    ? (sidebarElem.innerHTML = links
+        ?.map((i) => {
+          return `
 <p>${i.title}</p>
 `;
-    })
-    .join("");
+        })
+        .join(""))
+    : console.log("Need to pass in a 'elem' parameter");
 };

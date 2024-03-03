@@ -1,17 +1,19 @@
 import { inventory } from "../../lib/inventory.js";
 
-const cards = (idx, elem) => {
-  const catalogue = document.getElementById(elem);
+export const inventoryCards = (elem, key) => {
+  const catalogue = document.getElementById(String(elem));
+  let domText = "";
 
-  catalogue?.setAttribute("name", inventory[idx][idx]?.type || "");
+  catalogue.setAttribute("name", String(key) || "");
 
-  inventory[idx]?.map((item) => {
-    return catalogue
-      ? (catalogue.innerHTML += `
+  inventory
+    .filter((prod) => prod.type === String(key))
+    ?.map((item) => {
+      domText += `
 <div class="cardItem ${item.name || ""}" id=${item.sku} >
   <img src=${item.urls[0]} || "media/404.jpg"})" alt="${
-          item.alts[0] || ""
-        }"></img>
+        item.alts[0] || ""
+      }"></img>
   <p class=${item.sale ? "saleItem" : "none"}>ON SALE!</p>
   <p class=${item.price ? "itemPrice" : "none"}>$${item.price || ""}</p>
 
@@ -24,19 +26,16 @@ const cards = (idx, elem) => {
     <p class=${item.material ? "itemMaterial" : "none"}>
       <span class="highlight">
        ${item.material || ""} ${item.style || ""} ${item.type || ""} ${
-          item.brand ? "by " + item.brand : ""
-        }
+        item.brand ? "by " + item.brand : ""
+      }
       </span>
   </p>
   </div>
 </div>
-`)
-      : "Segfault on cards.js!";
-  });
-};
+`;
+    });
 
-export const inventoryCards = (idx, elem) => {
-  cards(idx, elem);
+  return (catalogue.innerHTML = domText);
 };
 
 // docs

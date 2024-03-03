@@ -1,6 +1,8 @@
 import { footer } from "../../components/footer/footer.js";
 import { createObserver } from "../../utils/observer.js";
 import { parallax } from "../../utils/parallax.js";
+import { navbar } from "../../components/nav/nav.js";
+import { primer } from "../../utils/primer.js";
 
 const form = document.querySelector(".contactForm");
 const submit = document.getElementById("submitForm");
@@ -18,10 +20,8 @@ submit.addEventListener("click", () => {
 
 console.log(input[0].nodeValue);
 
-// input.forEach((item) => {
-//   item.addEventListener("change", () => console.log(item));
-// });
-
+primer();
+navbar("nav");
 footer("footer");
-createObserver(".observe", 0, 0.0);
 parallax(".parallax", 0.05);
+createObserver(".observe", 0, 0.0);

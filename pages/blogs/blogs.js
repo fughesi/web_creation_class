@@ -1,7 +1,11 @@
 import { blogs } from "../../lib/blogs.js";
 import { search } from "../../utils/search.js";
+import { navbar } from "../../components/nav/nav.js";
+import { footer } from "../../components/footer/footer.js";
 
-const elem = document.getElementById("blogSection");
-window.addEventListener("load", (e) => search(e, elem, blogs));
+window.addEventListener("load", (e) =>
+  search(e, "blogSection", blogs, "title", "content", "blog")
+);
 
-document.getElementById("test").innerHTML = blogs[4].blog;
+navbar("nav");
+footer("footer");

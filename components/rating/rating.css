@@ -1,0 +1,15 @@
+select[class="rate"] {
+  border: 3px solid lime;
+  height: 5rem;
+  width: 15rem;
+}
+
+.stars {
+  height: 5rem;
+  width: calc(var(--customer-rating, 0) * 5rem);
+
+  background-color: red;
+  background-image: url("../../media/stars/starYellowCartoon.svg");
+  background-repeat: space no-repeat;
+  background-size: 5rem;
+}
