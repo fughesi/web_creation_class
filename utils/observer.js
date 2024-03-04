@@ -1,7 +1,7 @@
 export function createObserver(elem, style, margin, stops) {
   let options = {
     root: null, // defines ancestor; never really used.
-    rootMargin: margin ? `${margin?.toString()}` : "0px 0px 0px 0px", // grows or shrinks the viewport
+    rootMargin: margin ? `${margin.toString()}` : "0px 0px 0px 0px", // grows or shrinks the viewport
     threshold: stops ? stops : 0.0, // percentage of element visible before effect (0.0 => 1.0, can be an array of stops)
   };
 

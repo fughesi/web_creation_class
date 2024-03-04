@@ -8,40 +8,49 @@
   grid-template-rows: max-content;
   place-content: center;
 
+  background-size: 4rem;
   background-color: var(--black);
-}
+  background-repeat: repeat-y space;
+  background-image: url("../../media/footerpattern.png"),
+    radial-gradient(
+      ellipse,
+      var(--black) 0%,
+      var(--grey4) 15%,
+      var(--black) 70%
+    );
 
-#footer > div {
-  height: 100%;
-  width: 100%;
+  & > div {
+    height: 100%;
+    width: 100%;
 
-  padding: 2rem;
-}
+    padding: 2rem;
 
-#footer > div p {
-  margin: 0;
+    & p {
+      margin: 0;
 
-  color: var(--grey3);
-  font-size: var(--size6);
-  font-weight: bold;
-}
+      color: var(--grey3);
+      font-size: var(--size6);
+      font-weight: bold;
+    }
 
-#footer > div ul {
-  margin: 0;
-  padding: 0;
-}
+    & ul {
+      margin: 0;
+      padding: 0;
+    }
 
-#footer > div a {
-  margin: 1rem 0.5rem;
-  color: var(--grey2);
-  font-size: var(--size4);
-  transition: all 1s ease;
-}
+    & a {
+      margin: 1rem 0.5rem;
+      color: var(--grey2);
+      font-size: var(--size4);
+      transition: all 500ms ease;
+    }
 
-#footer > div a:hover,
-#footer > div a:focus {
-  color: var(--accent1);
-  text-decoration: underline;
+    & a:hover,
+    & a:focus {
+      color: var(--accent1);
+      text-decoration: underline;
+    }
+  }
 }
 
 .footerSocials {

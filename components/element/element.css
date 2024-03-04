@@ -10,9 +10,15 @@
 }
 
 .callToAction {
-  background-color: var(--color2);
+  padding: 1rem 2rem;
+  aspect-ratio: 3/1;
+  outline: none;
+  border: none;
+  border-radius: 2rem;
+  background-color: var(--color3);
   color: var(--color5);
-  width: 555px;
+  text-shadow: var(--shadow1);
+  font-size: var(--size4);
 }
 
 .toggleSwitch {
@@ -22,8 +28,8 @@
   margin: 1rem;
   padding: 1rem;
 
-  width: 6rem;
-  height: 2rem;
+  width: 5rem;
+  height: 1rem;
 
   border-radius: 25px;
   background-color: var(--white);
@@ -31,18 +37,19 @@
   cursor: pointer;
 
   transition: all 1500ms ease;
-}
 
-.toggleSwitch > span {
-  width: 1.5rem;
-  height: 1.5rem;
+  & > span {
+    width: 1.5rem;
+    height: 1.5rem;
 
-  border-radius: 50%;
-  background-color: var(--color3);
-  box-shadow: 1px 1px 5px var(--color3);
+    border-radius: 50%;
+    background-color: var(--color3);
+    box-shadow: 1px 1px 5px var(--color3);
+  }
 }
 
 .true {
   background-color: var(--grey1);
   justify-content: right;
+  box-shadow: inset 0 0 5px var(--color3);
 }

@@ -9,17 +9,12 @@
 
 :root {
   /* COLORS */
-  --color1: #5f8670;
-  --color2: #ff9800;
-  --color3: #b80000;
-  --color4: #820300;
-  --color5: #ff5400;
 
-  /* --color1: #fffcf2; */
-  /* --color2: #ccc5b9; */
-  /* --color3: #403d39; */
-  /* --color4: #252422; */
-  /* --color5: #ff5400; */
+  --color1: #fffcf2;
+  --color2: #ccc5b9;
+  --color3: #403d39;
+  --color4: #252422;
+  --color5: #ff5400;
 
   --white: #eeeeee;
   --black: #252422;
@@ -30,7 +25,6 @@
   --grey4: #333333;
 
   --accent1: #eb5e28;
-  /* --accent1: #eb5e28; */
 
   --highlight: #ffc10780;
 
@@ -57,6 +51,7 @@
   --shadow4: 5px 2px 2px var(--black), 22px -2px 10px var(--black);
   --shadow5: 1px 1px 1px var(--black), 18px -1px 4px var(--grey4);
   --shadow6: 0px 0px 1.5px var(--black);
+  --shadow7: 1px 1px 3px var(--black), 0 0 1px var(--black);
 
   /* RADIUS */
   --radius1: 2rem;
@@ -70,19 +65,19 @@
   --blur: 3px;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --color1: #fffcf2;
-    --color2: #ccc5b9;
-    --color3: #403d39;
-    --color4: #252422;
-    --color5: #ff5400;
-
-    --accent1: #eb5e28;
-
-    --highlight: #ffc10780;
-  }
-}
+/* @media (prefers-color-scheme: dark) { */
+/*   :root { */
+/*     --color1: #5f8670; */
+/*     --color2: #ff9800; */
+/*     --color3: #b80000; */
+/*     --color4: #820300; */
+/*     --color5: #ff5400; */
+/*  */
+/*     --accent1: #eb5e28; */
+/*  */
+/*     --highlight: #ffc10780; */
+/*   } */
+/* } */
 
 /* ** DEFAULTS START ** */
 
@@ -93,7 +88,7 @@
 }
 
 html {
-  color-scheme: dark light;
+  /* color-scheme: dark light; */
   scroll-behavior: smooth;
 }
 
@@ -176,69 +171,76 @@ input {
 
 .heroElements {
   display: contents;
-}
 
-.heroElements div {
-  background-color: var(--color2);
-  border-radius: var(--radius1);
-}
+  & div {
+    background-color: var(--color2);
+    border-radius: var(--radius1);
+  }
 
-.heroElements div:first-child {
-  grid-area: b;
+  & div:first-child {
+    grid-area: b;
 
-  width: 50%;
-  height: 50%;
-}
+    width: 50%;
+    height: 50%;
+  }
 
-.heroElements div:nth-child(2) {
-  position: relative;
-  grid-area: d;
-  background-color: transparent;
-  background-image: url("./media/icons/owl-small.png");
-  background-repeat: no-repeat;
-  background-attachment: scroll;
-  background-size: contain;
-}
+  & div:nth-child(2) {
+    position: relative;
+    grid-area: d;
+    background-color: transparent;
+    background-image: url("./media/icons/owl-small.png");
+    background-repeat: no-repeat;
+    background-attachment: scroll;
+    background-size: contain;
+  }
 
-div:has(.imgparallax) {
-  overflow: hidden;
-  width: 20rem;
+  div:has(.imgparallax) {
+    overflow: hidden;
+    width: 20rem;
+  }
+
+  & div:nth-child(2)::after {
+    position: absolute;
+    content: "OWL WALLETS & MORE";
+    top: 120%;
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: var(--size9);
+    line-height: 5rem;
+  }
+
+  & div:nth-child(3) {
+    grid-area: e;
+    background-color: var(--color5);
+    box-shadow: var(--shadow1);
+  }
+
+  & div:last-child {
+    grid-area: c;
+
+    width: 300px;
+    height: 300px;
+    background-image: url("./media/icons/card-graphic.png");
+    background-repeat: no-repeat;
+    background-attachment: scroll;
+    background-size: cover;
+  }
 }
 
 .imgparallax {
   align-self: bottom;
 }
 
-.heroElements div:nth-child(2)::after {
-  position: absolute;
-  content: "OWL WALLETS & MORE";
-  top: 120%;
-  left: 50%;
-  transform: translateX(-50%);
-  font-size: var(--size9);
-  line-height: 5rem;
-}
-
-.heroElements div:nth-child(3) {
-  grid-area: e;
-  background-color: var(--color5);
-  box-shadow: var(--shadow1);
-}
-
-.heroElements div:last-child {
-  grid-area: c;
-
-  width: 300px;
-  height: 300px;
-  background-image: url("./media/icons/card-graphic.png");
-  background-repeat: no-repeat;
-  background-attachment: scroll;
-  background-size: cover;
-}
-
 .observe {
-  width: 250px;
-  height: 250px;
-  background-color: red;
   transition: all 1500ms ease;
+}
+
+.FAQfieldset {
+  width: min-content;
+  margin-left: 1rem;
+
+  & legend {
+    font-size: var(--size5);
+    color: var(--color5);
+  }
 }

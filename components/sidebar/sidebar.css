@@ -11,6 +11,10 @@
   color: var(--color2);
   background-color: var(--color3);
   transition: all 500ms linear;
+
+  & p {
+    font-size: var(--size5);
+  }
 }
 
 #indexSidebar::after {
@@ -29,10 +33,6 @@
   color: var(--color2);
   background-color: inherit;
   border-radius: 0 25px 25px 0;
-}
-
-#indexSidebar p {
-  font-size: var(--size5);
 }
 
 .moveSidebar {

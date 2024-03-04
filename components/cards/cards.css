@@ -45,24 +45,24 @@
 
   border-radius: var(--radius1);
   box-shadow: var(--shadow3);
-}
 
-.cardItem > img {
-  position: absolute;
-  z-index: 0;
-  top: 0;
-  left: 0;
+  & > img {
+    position: absolute;
+    z-index: 0;
+    top: 0;
+    left: 0;
 
-  width: 100%;
-  height: 100%;
+    width: 100%;
+    height: 100%;
 
-  object-fit: cover;
-  transition: all 2s ease;
-  transition-delay: 500ms;
-}
+    object-fit: cover;
+    transition: all 2s ease;
+    transition-delay: 500ms;
+  }
 
-.cardItem > img:hover {
-  scale: 1.25;
+  & > img:hover {
+    scale: 1.25;
+  }
 }
 
 .saleItem {

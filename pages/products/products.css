@@ -1,19 +1,12 @@
 @import url("../../styles.css");
 
 .productsContainer > h1 {
+  padding-top: 13rem;
+
   text-align: center;
   font-size: var(--size9);
   font-weight: bold;
   text-decoration: underline 11px solid var(--accent1);
-}
-
-.FAQfieldset {
-  width: min-content;
-
-  & legend {
-    font-size: var(--size5);
-    color: var(--color5);
-  }
 }
 
 #productChart {

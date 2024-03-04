@@ -21,7 +21,24 @@ class ReuseableComponent extends HTMLElement {
       ? this.firstElementChild?.classList.add("true")
       : this.firstElementChild?.classList.remove("true");
 
-    console.log(this.toggle);
+    const DM = document.documentElement.style;
+    if (this.toggle === true) {
+      DM.setProperty("color-scheme", "dark");
+      DM.setProperty("--color1", "#5f8670");
+      DM.setProperty("--color2", "#ff9800");
+      DM.setProperty("--color3", "#b80000");
+      DM.setProperty("--color4", "#820300");
+      DM.setProperty("--color5", "#ff5400");
+      DM.setProperty("--accent1", "#eb5e28");
+    } else {
+      DM.setProperty("color-scheme", "light");
+      DM.setProperty("--color1", "#fffcf2");
+      DM.setProperty("--color2", "#ccc5b9");
+      DM.setProperty("--color3", "#403d39");
+      DM.setProperty("--color4", "#252422");
+      DM.setProperty("--color5", "#ff5400");
+      DM.setProperty("--accent1", "#eb5e28");
+    }
     return this.toggle;
   }
 
@@ -29,13 +46,19 @@ class ReuseableComponent extends HTMLElement {
     switch (elem) {
       case "button":
         this.innerHTML = `
-          <a href=${this.href}  class="reuseableButton" target="_blank" rel="noreferrer noopener">${this.text || ""}</a>
+          <a href=${
+            this.href
+          }  class="reuseableButton" target="_blank" rel="noreferrer noopener">${
+          this.text || ""
+        }</a>
           `;
         break;
 
       case "cta":
         this.innerHTML = `
-          <button onclick="alert('${this.msg}')"  class="callToAction">${this.text || ""}</button>
+          <button onclick="alert('${this.msg}')"  class="callToAction">${
+          this.text || ""
+        }</button>
           `;
         break;
 
@@ -48,7 +71,7 @@ class ReuseableComponent extends HTMLElement {
 
       default:
         console.log(
-          "Must provide an 'elem' prop with one of the following elements: ['button', 'cta', 'toggle']",
+          "Must provide an 'elem' prop with one of the following elements: ['button', 'cta', 'toggle']"
         );
     }
   }
@@ -56,12 +79,13 @@ class ReuseableComponent extends HTMLElement {
 
 export const reuseableComponent = customElements.define(
   "custom-elem",
-  ReuseableComponent,
+  ReuseableComponent
 );
 
 // docs
-// https://developer.mozilla.org/en-US/docs/Web/API/HTMLElement
-// https://developer.mozilla.org/en-US/docs/Web/API/CustomElementRegistry/define#valid_custom_element_names
-// https://developer.salesforce.com/docs/platform/lwc/guide/create-lifecycle-hooks-dom.html
-// https://developer.mozilla.org/en-US/docs/Web/API/Node/firstChild
 // https://www.w3schools.com/js/js_switch.asp
+// https://developer.mozilla.org/en-US/docs/Web/API/HTMLElement
+// https://developer.mozilla.org/en-US/docs/Web/API/Node/firstChild
+// https://developer.mozilla.org/en-US/docs/Web/API/Document/documentElement
+// https://developer.salesforce.com/docs/platform/lwc/guide/create-lifecycle-hooks-dom.html
+// https://developer.mozilla.org/en-US/docs/Web/API/CustomElementRegistry/define#valid_custom_element_names

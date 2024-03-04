@@ -3,7 +3,7 @@ import { navbar } from "../../components/nav/nav.js";
 import { inventory } from "../../lib/inventory.js";
 import { search } from "../../utils/search.js";
 
-// navbar("nav");
+navbar("nav");
 footer("footer");
 
 const searchBar = document.getElementById("searchBar");

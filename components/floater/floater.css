@@ -1,33 +1,37 @@
 .floatbarContainer {
   position: fixed;
   inset: auto 0 -8rem auto;
-  z-index: 3;
+  z-index: 5;
 
   padding: 1rem 2rem;
 
   width: min-content;
-  height: 14rem;
+  height: 22rem;
+  transform: translateY(9rem);
 
   color: var(--color4);
   box-shadow: var(--shadow4);
+  font-size: var(--size4);
   background-color: var(--color2);
   border-radius: 1.5rem 0 0 0;
 
   cursor: pointer;
   user-select: none;
-  transition: all 1500ms ease;
+  transition: all 1000ms;
+
+  & ul {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+
+    & img {
+      width: 4.25rem;
+    }
+  }
 }
 
-.floatbarContainer ul {
-  display: flex;
-  justify-content: space-evenly;
-}
-
-.floatbarContainer ul li {
-  font-size: 2rem;
-}
-
-.floatbarContainer:hover {
-  transform: translateY(-8rem);
+.floatbarContainer:hover,
+.floatbarContainer:focus {
+  transform: translateY(-6rem);
   box-shadow: var(--shadow5);
 }

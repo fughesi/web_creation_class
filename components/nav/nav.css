@@ -5,39 +5,72 @@
   left: 0;
 
   width: 100vw;
-  padding: 0.5rem;
+  padding: 0.5em;
 
-  display: flex;
-  justify-content: flex-end;
+  display: grid;
+  grid-template-columns: repeat(7, auto);
+  justify-content: center;
+  align-items: center;
 
   font-variant: small-caps;
-  background-color: var(--color4);
   box-shadow: var(--shadow1);
   backdrop-filter: blur(15px);
+  background-color: #fff8;
+  background-image: linear-gradient(180deg, var(--white), #fff5);
 
-  transition: all 500ms;
   overflow: hidden;
-}
 
-.desktopNavbar a {
-  padding: 0 1rem;
-  color: var(--color2);
-  font-size: var(--size5);
-  transition: color 500ms;
-  mix-blend-mode: hard-light;
-}
+  & img {
+    width: 9rem;
+    object-fit: cover;
+    mix-blend-mode: darken;
+  }
 
-.desktopNavbar a:hover {
-  color: var(--accent1);
+  & a:has(img) {
+    display: contents;
+  }
+
+  & a {
+    padding: 0 1rem;
+    color: var(--color2);
+    font-size: var(--size6);
+
+    text-shadow: var(--shadow7);
+    font-family: var(--font1);
+    font-weight: bold;
+  }
+
+  & a:hover {
+    color: var(--accent1);
+    mix-blend-mode: multiply;
+  }
+
+  & .callToAction {
+    background-color: var(--color2);
+  }
+
+  & .toggleSwitch {
+    scale: 0.8;
+  }
 }
 
 #nav:has(.crunch) > .desktopNavbar {
-  padding: 4rem 2rem;
-  background-color: transparent;
+  padding: 1em;
+  background-color: #fff5;
   justify-content: space-evenly;
-}
+  backdrop-filter: blur(15px);
+  transition: all 350ms;
 
-#nav:has(.crunch) > .desktopNavbar a {
-  font-size: var(--size7);
-  color: var(--color4);
+  & a {
+    font-size: var(--size7);
+    color: var(--color2);
+  }
+
+  & img {
+    width: 9.35rem;
+  }
+
+  & .toggleSwitch {
+    rotate: 90deg;
+  }
 }
