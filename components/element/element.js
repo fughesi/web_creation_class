@@ -1,3 +1,5 @@
+import { getStorage, setStorage } from "../../utils/storage.js";
+
 class ReuseableComponent extends HTMLElement {
   constructor() {
     super();
@@ -6,7 +8,7 @@ class ReuseableComponent extends HTMLElement {
 
   connectedCallback() {
     // function that fires when custom element called
-    this.toggle = false;
+    this.toggle = setStorage("color-scheme", false);
     this.elem = this.getAttribute("elem");
     this.text = this.getAttribute("text") || "";
     this.href = this.getAttribute("href") || "#";
@@ -16,7 +18,7 @@ class ReuseableComponent extends HTMLElement {
   }
 
   toggleSwitch() {
-    this.toggle = !this.toggle;
+    this.toggle = !getStorage("color-scheme");
     this.toggle
       ? this.firstElementChild?.classList.add("true")
       : this.firstElementChild?.classList.remove("true");
@@ -39,8 +41,35 @@ class ReuseableComponent extends HTMLElement {
       DM.setProperty("--color5", "#ff5400");
       DM.setProperty("--accent1", "#eb5e28");
     }
-    return this.toggle;
+    setStorage("color-scheme", this.toggle);
   }
+
+  // toggleSwitch() {
+  //   this.toggle = !this.toggle;
+  //   this.toggle
+  //     ? this.firstElementChild?.classList.add("true")
+  //     : this.firstElementChild?.classList.remove("true");
+  //
+  //   const DM = document.documentElement.style;
+  //   if (this.toggle === true) {
+  //     DM.setProperty("color-scheme", "dark");
+  //     DM.setProperty("--color1", "#5f8670");
+  //     DM.setProperty("--color2", "#ff9800");
+  //     DM.setProperty("--color3", "#b80000");
+  //     DM.setProperty("--color4", "#820300");
+  //     DM.setProperty("--color5", "#ff5400");
+  //     DM.setProperty("--accent1", "#eb5e28");
+  //   } else {
+  //     DM.setProperty("color-scheme", "light");
+  //     DM.setProperty("--color1", "#fffcf2");
+  //     DM.setProperty("--color2", "#ccc5b9");
+  //     DM.setProperty("--color3", "#403d39");
+  //     DM.setProperty("--color4", "#252422");
+  //     DM.setProperty("--color5", "#ff5400");
+  //     DM.setProperty("--accent1", "#eb5e28");
+  //   }
+  //   return this.toggle;
+  // }
 
   render(elem) {
     switch (elem) {

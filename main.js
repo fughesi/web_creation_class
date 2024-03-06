@@ -8,6 +8,7 @@ import { sidebar } from "./components/sidebar/sidebar.js";
 import { createObserver } from "./utils/observer.js";
 import { parallax } from "./utils/parallax.js";
 import { rating } from "./components/rating/rating.js";
+import { cart } from "./utils/cart.js";
 
 floater();
 signature();
