@@ -12,23 +12,29 @@
   </head>
   <body>
     <main class="indexContainer">
+      <nav id="nav"></nav>
+
+      <custom-elem
+        elem="modal"
+        img="../../media/favicon.webp"
+        alt="shopping cart"
+        className="cartIcon"
+      ></custom-elem>
+
       <section class="hero">
         <!-- <aside -->
         <!--   id="indexSidebar" -->
         <!--   onclick="toggle('indexSidebar', 'moveSidebar')" -->
         <!-- ></aside> -->
 
-        <nav id="nav"></nav>
         <div class="heroElements observe">
           <div class="observe"></div>
           <div class="parallax"></div>
           <div>
-            <a href="#">
-              <img
-                src="./media/icons/owl-small.png"
-                class="parallax imgparallax"
-              />
-            </a>
+            <img
+              src="./media/icons/owl-small.png"
+              class="parallax imgparallax"
+            />
           </div>
           <div class="parallax"></div>
         </div>
@@ -37,11 +43,9 @@
       <div id="wallets"></div>
       <div id="watches"></div>
 
-      <script src="./media/logos/walletSVG.js">
-        wallet()
-      </script>
-
-      <!-- <custom-elem elem="button" text="ashley"></custom-elem> -->
+      <!-- <script src="./media/logos/walletSVG.js"> -->
+      <!--   wallet() -->
+      <!-- </script> -->
 
       <!-- <div class="ratingStars"></div> -->
       <select name="rate" id="rate" class="rate">

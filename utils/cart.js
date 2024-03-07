@@ -1,10 +1,10 @@
-import { setStorage, getStorage, removeStorage } from "./storage.js";
+import { setStorage, getStorage } from "./storage.js";
 import { CART } from "../lib/enums.js";
 
 export const cart = (product, action) => {
   let shoppingCart = getStorage("shoppingCart") || [];
 
-  // find index of product in cart if it exists, otherwise add it
+  // find index of product, otherwise add it
   const item = shoppingCart?.findIndex((i) => i.id === product?.id);
 
   switch (String(action)) {
@@ -19,6 +19,8 @@ export const cart = (product, action) => {
     case CART.REMOVE:
       if (item >= 0) {
         shoppingCart = shoppingCart.filter((i) => i?.id !== product?.id);
+      } else {
+        return;
       }
       break;
 
@@ -39,13 +41,23 @@ export const cart = (product, action) => {
   setStorage("shoppingCart", shoppingCart);
 };
 
-// export const cartTotal = (shoppingCart) => {
-//   let Total = 0;
-//   for (const item of shoppingCart) {
-//     item.price ? (Total += item.price) : 0;
-//   }
-// };
+export const cartTotalAmount = (shoppingCart) => {
+  const totalAmount = shoppingCart?.reduce((total, item) => {
+    return total + item.price * item.quantity;
+  }, 0);
+  return totalAmount;
+};
+
+export const cartTotalQuantity = (shoppingCart) => {
+  const totalQuantity = shoppingCart?.reduce((total, item) => {
+    return total + item.quantity;
+  }, 0);
+  return totalQuantity;
+};
 
 // docs
-// https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/findIndex
 // https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/switch
+// https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Spread_syntax
+// https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/Reduce
+// https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/filter
+// https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/findIndex

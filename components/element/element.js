@@ -13,6 +13,10 @@ class ReuseableComponent extends HTMLElement {
     this.text = this.getAttribute("text") || "";
     this.href = this.getAttribute("href") || "#";
     this.msg = this.getAttribute("msg") || "";
+    this.img = this.getAttribute("img") || "";
+    this.alt = this.getAttribute("alt") || "";
+    this.count = getStorage();
+    this.className = this.getAttribute("className") || "";
 
     this.render(this.elem);
   }
@@ -44,32 +48,9 @@ class ReuseableComponent extends HTMLElement {
     setStorage("color-scheme", this.toggle);
   }
 
-  // toggleSwitch() {
-  //   this.toggle = !this.toggle;
-  //   this.toggle
-  //     ? this.firstElementChild?.classList.add("true")
-  //     : this.firstElementChild?.classList.remove("true");
-  //
-  //   const DM = document.documentElement.style;
-  //   if (this.toggle === true) {
-  //     DM.setProperty("color-scheme", "dark");
-  //     DM.setProperty("--color1", "#5f8670");
-  //     DM.setProperty("--color2", "#ff9800");
-  //     DM.setProperty("--color3", "#b80000");
-  //     DM.setProperty("--color4", "#820300");
-  //     DM.setProperty("--color5", "#ff5400");
-  //     DM.setProperty("--accent1", "#eb5e28");
-  //   } else {
-  //     DM.setProperty("color-scheme", "light");
-  //     DM.setProperty("--color1", "#fffcf2");
-  //     DM.setProperty("--color2", "#ccc5b9");
-  //     DM.setProperty("--color3", "#403d39");
-  //     DM.setProperty("--color4", "#252422");
-  //     DM.setProperty("--color5", "#ff5400");
-  //     DM.setProperty("--accent1", "#eb5e28");
-  //   }
-  //   return this.toggle;
-  // }
+  modal() {
+    console.log("hi");
+  }
 
   render(elem) {
     switch (elem) {
@@ -91,9 +72,18 @@ class ReuseableComponent extends HTMLElement {
           `;
         break;
 
+      case "modal":
+        this.innerHTML = `
+          <img src="${this.img}" alt="${this.alt}" class="modal ${
+          this.className
+        }" data-count="${5}" />
+          `;
+        this.addEventListener("click", () => this.modal());
+        break;
+
       case "toggle":
         this.innerHTML = `
-          <span class="toggleSwitch"><span></span></span>
+          <span class="toggleSwitch" mode="${this.text}"><span></span></span>
           `;
         this.addEventListener("click", () => this.toggleSwitch());
         break;

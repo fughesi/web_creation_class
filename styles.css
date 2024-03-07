@@ -88,7 +88,7 @@
 }
 
 html {
-  /* color-scheme: dark light; */
+  color-scheme: dark light;
   scroll-behavior: smooth;
 }
 
@@ -111,6 +111,10 @@ body {
 
 body::-webkit-scrollbar {
   display: none;
+}
+
+main {
+  position: relative;
 }
 
 button {
@@ -166,7 +170,15 @@ input {
     ". . . . b"
     ". . e . c";
   grid-gap: 1rem;
-  background-color: var(--color1);
+
+  background-image: url("./media/icons/owl-big-trans-20.png");
+  background-attachment: fixed;
+  background-size: contain;
+  background-position: center;
+  background-repeat: no-repeat;
+  /* background-image: linear-gradient(0deg, #fff0, #fff0); */
+
+  /* opacity: 0.5; */
 }
 
 .heroElements {
@@ -229,6 +241,13 @@ input {
 
 .imgparallax {
   align-self: bottom;
+}
+
+.cartIcon {
+  position: fixed;
+  inset: 2rem 2rem auto auto;
+  z-index: 5;
+  width: 4rem;
 }
 
 .observe {

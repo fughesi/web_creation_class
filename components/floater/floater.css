@@ -1,37 +1,37 @@
 .floatbarContainer {
   position: fixed;
-  inset: auto 0 -8rem auto;
+  inset: auto 0 -14rem auto;
   z-index: 5;
 
-  padding: 1rem 2rem;
+  padding: 1rem;
 
   width: min-content;
-  height: 22rem;
-  transform: translateY(9rem);
+  overflow: hidden;
+  height: 17rem;
 
   color: var(--color4);
+  backdrop-filter: blur(15px);
   box-shadow: var(--shadow4);
-  font-size: var(--size4);
-  background-color: var(--color2);
+  font-size: var(--size3);
+  outline: 1px solid var(--color2);
   border-radius: 1.5rem 0 0 0;
 
   cursor: pointer;
   user-select: none;
-  transition: all 1000ms;
+  transition: transform 1000ms;
 
-  & ul {
-    display: flex;
-    flex-direction: column;
-    justify-content: space-evenly;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
 
-    & img {
-      width: 4.25rem;
-    }
+  & img {
+    width: 3rem;
+    margin-bottom: 0.75rem;
   }
 }
 
 .floatbarContainer:hover,
 .floatbarContainer:focus {
-  transform: translateY(-6rem);
+  transform: translateY(-12rem);
   box-shadow: var(--shadow5);
 }
