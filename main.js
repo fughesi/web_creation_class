@@ -8,6 +8,7 @@ import { sidebar } from "./components/sidebar/sidebar.js";
 import { createObserver } from "./utils/observer.js";
 import { parallax } from "./utils/parallax.js";
 import { rating } from "./components/rating/rating.js";
+import { visibility } from "./utils/visibility.js";
 import { cart } from "./utils/cart.js";
 
 floater();
@@ -19,7 +20,13 @@ rating(".rate");
 footer("footer");
 sidebar("indexSidebar");
 
-parallax(".parallax", 0.1);
+parallax(".tagline1", 0.2);
+parallax(".tagline2", 0.3);
+parallax(".tagline3", 0.4);
+
 inventoryCards("watches", "watches");
 inventoryCards("wallets", "wallets");
-createObserver(".observe", "move", "0px 0px 0px 0px", 0.0);
+
+createObserver(".observe", "move", "0px 0px 0px 0px", 0.2);
+
+visibility(".owl", 0.0015);

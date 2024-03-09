@@ -15,6 +15,7 @@
   transform-origin: left;
 
   border: 1px solid var(--grey4);
+  background-color: #fff5;
 
   & .links {
     display: flex;
@@ -26,9 +27,16 @@
 
     & a {
       padding: 1.5rem;
-      font-size: var(--size3);
+      font-size: var(--size4);
       color: var(--grey4);
       font-variant: small-caps;
+      transition: all 350ms;
+    }
+
+    a:hover,
+    a:focus {
+      letter-spacing: 0.1rem;
+      scale: 1.2;
     }
   }
 }

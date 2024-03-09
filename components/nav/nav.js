@@ -25,8 +25,5 @@ export const navbar = (nav) => {
   createObserver(".navObserver", "crunch", "5px 0px 0px 0px", 0.0);
 };
 
-// <a href="../../index.html"><img src="../../media/icons/owl-small.png" alt="Home page" /></a>
-// <custom-elem elem="modal" img="../../media/favicon.webp" alt="shopping cart" className="cartIcon" ></custom-elem>
-
 // docs
 // https://developer.mozilla.org/en-US/docs/Web/API/Element/innerHTML

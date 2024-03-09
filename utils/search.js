@@ -1,5 +1,5 @@
 export function search(e, elem, iter, key1, key2, key3, key4, key5) {
-  const string = e.target.value?.toString();
+  const string = e.target.value?.toString().toLowerCase();
   const node = document.getElementById(String(elem));
   let domElem = "";
 
@@ -8,7 +8,7 @@ export function search(e, elem, iter, key1, key2, key3, key4, key5) {
       "Must include at least 2 arguments for iter in the 4th and 5th positions"
     );
 
-  string?.trim().toLowerCase().length > 0
+  string?.trim().length > 0
     ? (domElem = iter
         ?.filter(
           (i) =>

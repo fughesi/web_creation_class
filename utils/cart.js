@@ -55,6 +55,35 @@ export const cartTotalQuantity = (shoppingCart) => {
   return totalQuantity;
 };
 
+const cartModal = (elem) => {
+  const modalDiv = document.getElementById(elem.toString());
+  const cart = getStorage("shoppingCart");
+  let content = "";
+
+  [cart, modalDiv].every(Boolean)
+    ? cart.map((item) => {
+        return (content += `
+<p>The <strong>${item.name}</strong> by ${item.brand} (${item.quantity})</p>
+<p>Price per ${item.type}:  \$${item.price.toFixed(2)} - subtotal: \$${(
+          item.price * item.quantity
+        ).toFixed(2)}</p>
+<p>${item.sku}</p>
+<span></span>
+`);
+      })
+    : (content += `
+<h1>There are currently no items in your cart</h1>
+  `);
+
+  modalDiv
+    ? (modalDiv.innerHTML = `
+<h1>Items currently in your cart:</h1>
+${content}`)
+    : console.log("Cart div not working");
+};
+
+cartModal("cartModalDiv");
+
 // docs
 // https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/switch
 // https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Spread_syntax

@@ -1,4 +1,6 @@
 import { inventory } from "../../lib/inventory.js";
+import { cart } from "../../utils/cart.js";
+import { CART } from "../../lib/enums.js";
 
 export const inventoryCards = (elem, key) => {
   const catalogue = document.getElementById(String(elem));
@@ -7,10 +9,10 @@ export const inventoryCards = (elem, key) => {
   catalogue.setAttribute("name", String(key) || "");
 
   inventory
-    .filter((prod) => prod.type === String(key))
+    ?.filter((prod) => prod.type === String(key))
     ?.map((item) => {
       domText += `
-<div class="cardItem ${item.name || ""}" id=${item.sku} >
+<div class="cardItem ${item.name || ""}" id=${item.id} >
   <img src=${item.urls[0]} || "media/404.jpg"})" alt="${
         item.alts[0] || ""
       }"></img>
@@ -29,7 +31,7 @@ export const inventoryCards = (elem, key) => {
         item.brand ? "by " + item.brand : ""
       }
       </span>
-  </p>
+    </p>
   </div>
 </div>
 `;

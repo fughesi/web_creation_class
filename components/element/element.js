@@ -16,7 +16,6 @@ class ReuseableComponent extends HTMLElement {
     this.img = this.getAttribute("img") || "";
     this.alt = this.getAttribute("alt") || "";
     this.count = getStorage();
-    this.className = this.getAttribute("className") || "";
 
     this.render(this.elem);
   }
@@ -48,10 +47,6 @@ class ReuseableComponent extends HTMLElement {
     setStorage("color-scheme", this.toggle);
   }
 
-  modal() {
-    console.log("hi");
-  }
-
   render(elem) {
     switch (elem) {
       case "button":
@@ -74,18 +69,21 @@ class ReuseableComponent extends HTMLElement {
 
       case "modal":
         this.innerHTML = `
-          <img src="${this.img}" alt="${this.alt}" class="modal ${
-          this.className
-        }" data-count="${5}" />
+          <img src="${this.img}" alt="${
+          this.alt
+        }"  id="cartIcon" count="${5}" />
+          <div id="cartModalDiv"></div>
           `;
-        this.addEventListener("click", () => this.modal());
+        this.addEventListener("click", (e) =>
+          e.target.classList.toggle("cartModal")
+        );
         break;
 
       case "toggle":
         this.innerHTML = `
           <span class="toggleSwitch" mode="${this.text}"><span></span></span>
           `;
-        this.addEventListener("click", () => this.toggleSwitch());
+        this.addEventListener("click", (e) => this.toggleSwitch(e));
         break;
 
       default:
@@ -105,6 +103,7 @@ export const reuseableComponent = customElements.define(
 // https://www.w3schools.com/js/js_switch.asp
 // https://developer.mozilla.org/en-US/docs/Web/API/HTMLElement
 // https://developer.mozilla.org/en-US/docs/Web/API/Node/firstChild
+// https://developer.mozilla.org/en-US/docs/Web/API/Element/classList
 // https://developer.mozilla.org/en-US/docs/Web/API/Document/documentElement
 // https://developer.salesforce.com/docs/platform/lwc/guide/create-lifecycle-hooks-dom.html
 // https://developer.mozilla.org/en-US/docs/Web/API/CustomElementRegistry/define#valid_custom_element_names
