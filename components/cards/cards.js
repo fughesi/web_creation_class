@@ -6,7 +6,7 @@ export const inventoryCards = (elem, key) => {
   const catalogue = document.getElementById(String(elem));
   let domText = "";
 
-  catalogue.setAttribute("name", String(key) || "");
+  catalogue?.setAttribute("name", String(key) || "");
 
   inventory
     ?.filter((prod) => prod.type === String(key))
@@ -37,7 +37,9 @@ export const inventoryCards = (elem, key) => {
 `;
     });
 
-  return (catalogue.innerHTML = domText);
+  return catalogue
+    ? (catalogue.innerHTML = domText)
+    : console.log("cards didn't work - need elem property");
 };
 
 // docs

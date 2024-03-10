@@ -1,4 +1,3 @@
-import { createObserver } from "../../utils/observer.js";
 import { reuseableComponent } from "../element/element.js";
 
 export const navbar = (nav) => {
@@ -16,13 +15,11 @@ export const navbar = (nav) => {
     <a href="../../pages/questions/questions.html">questions</a>
     <a href="../../pages/contact/contact.html">contact</a>
     <a href="../../pages/products/products.html">products</a>
+    <a href="../../pages/cart/cart.html">cart</a>
   </div>
 </div>
-<div class="navObserver crunch"></div>
 `)
     : "";
-
-  createObserver(".navObserver", "crunch", "5px 0px 0px 0px", 0.0);
 };
 
 // docs

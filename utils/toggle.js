@@ -1,11 +1,11 @@
-const toggle = (elem, css) => {
+export const toggle = (elem, css) => {
   if (elem && css) {
     return document
       .getElementById(elem.toString())
       .classList.toggle(css.toString() || "");
   } else {
     console.log(
-      "Must provide an element (elem) and class (css) parameter for toggle fn to work",
+      "Must provide an element (elem) and class (css) parameter for toggle fn to work"
     );
   }
 };

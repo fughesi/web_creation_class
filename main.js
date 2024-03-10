@@ -1,15 +1,13 @@
-import { navbar } from "./components/nav/nav.js";
 import { reuseableComponent } from "./components/element/element.js";
-import { signature } from "./lib/signature.js";
 import { inventoryCards } from "./components/cards/cards.js";
-import { footer } from "./components/footer/footer.js";
 import { floater } from "./components/floater/floater.js";
-import { sidebar } from "./components/sidebar/sidebar.js";
-import { createObserver } from "./utils/observer.js";
-import { parallax } from "./utils/parallax.js";
+import { footer } from "./components/footer/footer.js";
 import { rating } from "./components/rating/rating.js";
+import { createObserver } from "./utils/observer.js";
 import { visibility } from "./utils/visibility.js";
-import { cart } from "./utils/cart.js";
+import { navbar } from "./components/nav/nav.js";
+import { signature } from "./lib/signature.js";
+import { parallax } from "./utils/parallax.js";
 
 floater();
 signature();
@@ -18,7 +16,6 @@ reuseableComponent;
 navbar("nav");
 rating(".rate");
 footer("footer");
-sidebar("indexSidebar");
 
 parallax(".tagline1", 0.2);
 parallax(".tagline2", 0.3);

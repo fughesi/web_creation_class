@@ -98,27 +98,64 @@
   background-color: red;
 }
 
-.cartModal + div {
-  color: var(--color5);
+.cartModal + #cartModalDiv {
+  color: var(--color3);
   position: fixed;
   z-index: 10;
   inset: 10rem;
 
   border: 1px solid var(--grey4);
-  background-color: var(--color4);
+  background-color: var(--color1);
   box-shadow: var(--shadow1);
-  padding: 1.5rem;
+  padding: 5rem;
   overflow: scroll;
 
-  & p {
-    color: var(--color2);
+  & .cartModalContainer {
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+    align-items: center;
   }
 
-  & span {
-    display: block;
-    width: 50%;
-    height: 2px;
-    background-color: var(--color5);
+  & p {
+    color: var(--color3);
+  }
+
+  & strong {
+    font-size: var(--size5);
+    text-decoration: underline solid var(--accent1);
+  }
+
+  & h1 {
+    font-size: var(--size5);
+    font-family: var(--font3);
+    margin: 4rem 0 1rem 0;
+  }
+
+  & button {
+    background-color: blue;
+    border: none;
+    aspect-ratio: 1/1;
+    border-radius: 50%;
+    box-shadow: var(--shadow6);
+    font-size: var(--size3);
+  }
+
+  & button:first-child {
+    rotate: 180deg;
+  }
+
+  & .store {
+    font-size: var(--size6);
+  }
+
+  & h3 {
+    font-size: var(--size3);
+    font-family: var(--font1);
+  }
+
+  & .tax {
+    font-size: var(--size2);
   }
 }
 

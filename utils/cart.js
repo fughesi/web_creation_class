@@ -1,5 +1,7 @@
 import { setStorage, getStorage } from "./storage.js";
 import { CART } from "../lib/enums.js";
+import { template } from "../utils/template.js";
+import { inventory } from "../lib/inventory.js";
 
 export const cart = (product, action) => {
   let shoppingCart = getStorage("shoppingCart") || [];
@@ -55,38 +57,62 @@ export const cartTotalQuantity = (shoppingCart) => {
   return totalQuantity;
 };
 
-const cartModal = (elem) => {
-  const modalDiv = document.getElementById(elem.toString());
-  const cart = getStorage("shoppingCart");
-  let content = "";
+export const cartModal = (elem, cartItems) => {
+  const total = cartTotalAmount(cartItems);
+  const quantity = cartTotalQuantity(cartItems);
+  const currency = new Intl.NumberFormat("en-US", {
+    style: "currency",
+    currency: "USD",
+  }); //.format("add value here");
 
-  [cart, modalDiv].every(Boolean)
-    ? cart.map((item) => {
+  let content = `
+  <h1>THANK YOU FOR SHOPPING WITH <span class="store">OWL WALLETS &amp; MORE</span>!</h1>
+  <h3>You currently have ${
+    quantity
+      ? quantity +
+        " item(s) in your cart with a subtotal of " +
+        currency.format(total) +
+        " + tax."
+      : "no items in your cart."
+  } </h3>
+  <hr>
+  `;
+
+  cartItems
+    ? cartItems.map((item) => {
         return (content += `
-<p>The <strong>${item.name}</strong> by ${item.brand} (${item.quantity})</p>
-<p>Price per ${item.type}:  \$${item.price.toFixed(2)} - subtotal: \$${(
+<div class="cartModalContainer">
+  <p>The <strong>${item.name}</strong> by ${item.brand}</p>
+  <p>each ${currency.format(item.price)} / total: ${currency.format(
           item.price * item.quantity
-        ).toFixed(2)}</p>
-<p>${item.sku}</p>
-<span></span>
+        )}</p> 
+
+<div>
+  <button class="cartDecreaseBTN" data='${JSON.stringify(item)}'>⬆︎</button>
+ ( ${item.quantity} )
+  <button class="cartAddBTN" data='${JSON.stringify(item)}'>⬆︎</button>
+</div>
+
+</div>
 `);
       })
     : (content += `
 <h1>There are currently no items in your cart</h1>
   `);
 
-  modalDiv
-    ? (modalDiv.innerHTML = `
-<h1>Items currently in your cart:</h1>
-${content}`)
-    : console.log("Cart div not working");
+  template(content, elem);
+  return content;
 };
 
-cartModal("cartModalDiv");
+// cart(inventory[0], CART.ADD);
 
 // docs
+// https://www.w3schools.com/jsref/met_node_appendchild.asp
+// https://developer.mozilla.org/en-US/docs/Web/HTML/Element/template
 // https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/switch
 // https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Spread_syntax
 // https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/Reduce
 // https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/filter
+// https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/JSON/stringify
 // https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/findIndex
+// https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Intl/NumberFormat/NumberFormat

@@ -1,4 +1,7 @@
 import { getStorage, setStorage } from "../../utils/storage.js";
+import { cartModal } from "../../utils/cart.js";
+import { cart } from "../../utils/cart.js";
+import { CART } from "../../lib/enums.js";
 
 class ReuseableComponent extends HTMLElement {
   constructor() {
@@ -6,8 +9,8 @@ class ReuseableComponent extends HTMLElement {
     this.classList.add("elementDefault");
   }
 
+  // function that fires when custom element called
   connectedCallback() {
-    // function that fires when custom element called
     this.toggle = setStorage("color-scheme", false);
     this.elem = this.getAttribute("elem");
     this.text = this.getAttribute("text") || "";
@@ -15,7 +18,7 @@ class ReuseableComponent extends HTMLElement {
     this.msg = this.getAttribute("msg") || "";
     this.img = this.getAttribute("img") || "";
     this.alt = this.getAttribute("alt") || "";
-    this.count = getStorage();
+    this.cartItems = getStorage("shoppingCart");
 
     this.render(this.elem);
   }
@@ -74,9 +77,25 @@ class ReuseableComponent extends HTMLElement {
         }"  id="cartIcon" count="${5}" />
           <div id="cartModalDiv"></div>
           `;
-        this.addEventListener("click", (e) =>
-          e.target.classList.toggle("cartModal")
+        this.addEventListener(
+          "click",
+          (e) => e.target.classList.toggle("cartModal"),
+          cartModal("cartModalDiv", this.cartItems)
         );
+        this.querySelector(".cartDecreaseBTN")?.addEventListener(
+          "click",
+          (e) => {
+            console.log(e?.target);
+            const item = JSON.parse(e.target.getAttribute("data"));
+            cart(item, CART.DECREASE);
+            cartModal("cartModalDiv", this.cartItems);
+          }
+        ),
+          this.querySelector(".cartAddBTN")?.addEventListener("click", (e) => {
+            const item = JSON.parse(e.target.getAttribute("data"));
+            cart(item, CART.ADD);
+            cartModal("cartModalDiv", this.cartItems);
+          });
         break;
 
       case "toggle":

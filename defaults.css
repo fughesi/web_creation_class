@@ -111,6 +111,10 @@ body::-webkit-scrollbar {
   display: none;
 }
 
+body:has(.cartModal) {
+  overflow-y: hidden;
+}
+
 main {
   overflow: hidden;
   width: 100vw;

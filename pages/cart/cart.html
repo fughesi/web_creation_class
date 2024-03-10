@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+
+<html lang="en">
+  <head>
+    <title>eCommerce Website - cart</title>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link href="./cart.css" rel="stylesheet" />
+    <link rel="icon" type="image/x-icon" href="../../media/favicon.webp" />
+    <script src="./cart.js" type="module" defer></script>
+    <script>
+      const state = JSON.parse(localStorage.getItem("shoppingCart")) || "";
+    </script>
+  </head>
+  <body>
+    <main class="indexContainer">
+      <nav id="nav"></nav>
+
+      <custom-elem
+        elem="modal"
+        img="../../media/favicon.webp"
+        alt="shopping cart"
+        id="cartIcon"
+      ></custom-elem>
+    </main>
+    <div id="cart"></div>
+    <footer id="footer"></footer>
+  </body>
+</html>
