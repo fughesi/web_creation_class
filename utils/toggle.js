@@ -1,8 +1,8 @@
-export const toggle = (elem, css) => {
-  if (elem && css) {
+export const toggle = (elem, style) => {
+  if (elem && style) {
     return document
-      .getElementById(elem.toString())
-      .classList.toggle(css.toString() || "");
+      .getElementById(String(elem))
+      .classList.toggle(String(style) || "");
   } else {
     console.log(
       "Must provide an element (elem) and class (css) parameter for toggle fn to work"

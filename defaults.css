@@ -154,6 +154,10 @@ input {
   display: none !important;
 }
 
+.move {
+  transform: translate(0, 0) !important;
+}
+
 .FAQfieldset {
   width: min-content;
   margin-left: 1rem;

@@ -1,16 +1,12 @@
 export const template = (html, elem) => {
   const element = document.getElementById(String(elem));
   const slate = document.createElement("template");
-  const delta = document.createElement("template");
 
-  slate.innerHTML = html.trim();
+  slate.innerHTML = html;
 
-  if (delta !== slate) {
-    delta.innerHTML = slate.innerHTML;
-    element.appendChild(slate.content.cloneNode(true));
-  }
+  element.appendChild(slate.content.cloneNode(true));
 
-  console.log(delta, slate);
+  console.log(slate);
 };
 
 // docs

@@ -1,6 +1,5 @@
 import { getStorage, setStorage } from "../../utils/storage.js";
-import { cartModal } from "../../utils/cart.js";
-import { cart } from "../../utils/cart.js";
+import { cartModal, cart } from "../../utils/cart.js";
 import { CART } from "../../lib/enums.js";
 
 class ReuseableComponent extends HTMLElement {
@@ -80,21 +79,21 @@ class ReuseableComponent extends HTMLElement {
         this.addEventListener(
           "click",
           (e) => e.target.classList.toggle("cartModal"),
-          cartModal("cartModalDiv", this.cartItems)
+          cartModal()
         );
-        this.querySelector(".cartDecreaseBTN")?.addEventListener(
-          "click",
-          (e) => {
-            console.log(e?.target);
-            const item = JSON.parse(e.target.getAttribute("data"));
-            cart(item, CART.DECREASE);
-            cartModal("cartModalDiv", this.cartItems);
-          }
-        ),
-          this.querySelector(".cartAddBTN")?.addEventListener("click", (e) => {
+        this.querySelectorAll(".cartAddBTN")?.forEach((item) => {
+          item.addEventListener("click", (e) => {
             const item = JSON.parse(e.target.getAttribute("data"));
             cart(item, CART.ADD);
-            cartModal("cartModalDiv", this.cartItems);
+            cartModal();
+          });
+        }),
+          this.querySelectorAll(".cartDecreaseBTN")?.forEach((item) => {
+            item.addEventListener("click", (e) => {
+              const item = JSON.parse(e.target.getAttribute("data"));
+              cart(item, CART.DECREASE);
+              // cartModal("cartModalDiv", this.cartItems);
+            });
           });
         break;
 

@@ -2,20 +2,23 @@
 
 .hero {
   position: relative;
-  height: 200vh;
+  /* min-height: 200vh; */
   width: 100%;
   z-index: 1;
+
   display: grid;
-  /* grid-template: 2rem 10rem 30rem 30rem auto / repeat(5, 1fr); */
-  grid-template-rows: 2rem 10rem 30rem 30rem 10rem;
+  padding-top: 10rem;
+  grid-template-rows: 50vh 30rem 30rem 10rem;
   grid-template-areas:
+    ". a f b ."
+    "d d d d d"
     ". . . . ."
-    ". . . . a"
-    ". . . . b"
-    "f . d . c"
-    ". . . . ."
+    ". . g . c"
+    ". . g . ."
+    ". . g . ."
     "e e e e e";
-  grid-gap: 1rem;
+  grid-gap: 0.5rem;
+  place-items: center;
 
   background-image: url("./media/icons/owl-big-trans-20.png");
   background-attachment: fixed;
@@ -25,45 +28,72 @@
 
   & .tagline {
     grid-area: f;
+    position: relative;
 
     & p {
-      font-size: var(--size9);
       margin: 0;
       line-height: 1;
-      text-shadow: var(--shadow2);
+      color: var(--black);
+      font-size: var(--size9);
+    }
+
+    & .braceLeft,
+    & .braceRight {
+      color: red;
+      height: 15rem;
+      width: 5rem;
+      display: inline;
+      font-size: var(--size9);
+      font-family: var(--font3);
+      transform: translateX(-2rem);
+      background-color: orange;
+    }
+
+    &::after {
+      grid-area: a;
+      rotate: 180deg;
     }
   }
 
   .owl {
     grid-area: d;
     opacity: 0;
-  }
-
-  & div:nth-child(4) {
-    grid-area: c;
-
-    width: 300px;
-    height: 300px;
-    background-image: url("./media/icons/card-graphic.png");
-    background-repeat: no-repeat;
-    background-attachment: scroll;
-    background-size: cover;
+    z-index: 2;
   }
 
   .observe {
-    grid-area: b;
+    grid-area: e;
 
-    width: 50%;
-    height: 50%;
+    width: 30rem;
+    height: 10rem;
 
-    background-color: burlywood;
+    background-color: red;
 
     transform: translate(8rem, 1rem);
     transition: all 2500ms ease;
   }
 
-  .move {
-    transform: translate(0, 0);
+  & div[aria-label="about us"] {
+    grid-area: g;
+    height: 25rem;
+    width: 30rem;
+    overflow-wrap: break-word;
+    overflow-y: scroll;
+    overflow-x: hidden;
+
+    padding: 2.5rem 1.5rem;
+    box-shadow: var(--shadow1);
+    color: var(--grey4);
+    font-family: var(--font3);
+    font-size: var(--size5);
+    border: 1px solid var(--grey4);
+    background-color: var(--color1);
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+
+    &::-webkit-scrollbar {
+      display: none;
+    }
   }
 }
 

@@ -1,6 +1,5 @@
 import { setStorage, getStorage } from "./storage.js";
 import { CART } from "../lib/enums.js";
-import { template } from "../utils/template.js";
 import { inventory } from "../lib/inventory.js";
 
 export const cart = (product, action) => {
@@ -41,6 +40,7 @@ export const cart = (product, action) => {
   }
 
   setStorage("shoppingCart", shoppingCart);
+  cartModal();
 };
 
 export const cartTotalAmount = (shoppingCart) => {
@@ -57,7 +57,9 @@ export const cartTotalQuantity = (shoppingCart) => {
   return totalQuantity;
 };
 
-export const cartModal = (elem, cartItems) => {
+export const cartModal = () => {
+  const element = document.getElementById("cartModalDiv");
+  const cartItems = getStorage("shoppingCart");
   const total = cartTotalAmount(cartItems);
   const quantity = cartTotalQuantity(cartItems);
   const currency = new Intl.NumberFormat("en-US", {
@@ -66,6 +68,7 @@ export const cartModal = (elem, cartItems) => {
   }); //.format("add value here");
 
   let content = `
+  <i hidden>${JSON.stringify(cartItems)}</i> 
   <h1>THANK YOU FOR SHOPPING WITH <span class="store">OWL WALLETS &amp; MORE</span>!</h1>
   <h3>You currently have ${
     quantity
@@ -100,11 +103,10 @@ export const cartModal = (elem, cartItems) => {
 <h1>There are currently no items in your cart</h1>
   `);
 
-  template(content, elem);
-  return content;
+  element ? (element.innerHTML = content) : "";
 };
 
-// cart(inventory[0], CART.ADD);
+// cart(inventory[3], CART.ADD);
 
 // docs
 // https://www.w3schools.com/jsref/met_node_appendchild.asp
@@ -113,6 +115,4 @@ export const cartModal = (elem, cartItems) => {
 // https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Spread_syntax
 // https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/Reduce
 // https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/filter
-// https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/JSON/stringify
 // https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/findIndex
-// https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Intl/NumberFormat/NumberFormat

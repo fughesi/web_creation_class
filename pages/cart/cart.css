@@ -1,1 +1,9 @@
 @import url("../../styles.css");
+
+#time {
+  height: 60rem;
+  width: 40rem;
+  background-color: red;
+  z-index: 10000;
+  position: relative;
+}

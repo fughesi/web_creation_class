@@ -9,8 +9,9 @@
     <link rel="icon" type="image/x-icon" href="./media/favicon.webp" />
     <script src="main.js" type="module" defer></script>
     <script src="utils/toggle.js" defer></script>
-    <script> const state = JSON.parse(localStorage.getItem("shoppingCart")) ||
-      "";</script>
+    <script>
+      const state = JSON.parse(localStorage.getItem("shoppingCart")) || "";
+    </script>
   </head>
   <body>
     <main class="indexContainer">
@@ -27,20 +28,33 @@
         <div class="observe"></div>
         <div class="parallax"></div>
 
-          <img
-            src="./media/icons/owl-small.png"
-            class="owl"
-          />
+        <img src="./media/icons/owl-small.png" class="owl" />
 
-        <div class="parallax"></div>
+        <div aria-label="about us">
+          &ensp; Welcome to Owl Watches &amp; More, your haven for exquisite
+          timepieces and accessories. Nestled in a quaint corner of town, Owl
+          Watches &amp; More offers a charming array of finely crafted wallets
+          and watches to suit every taste. Step into our cozy boutique and
+          discover a curated collection of elegant watches that marry timeless
+          design with modern functionality. From classic styles to contemporary
+          trends, our selection caters to the discerning individual who values
+          both style and precision. <br /><br />&ensp; But Owl Watches &amp;
+          More is not just about timepieces; we also pride ourselves on our
+          selection of meticulously crafted wallets, designed to complement any
+          ensemble with sophistication and practicality. At Owl Watches &amp;
+          More, our commitment to quality and customer satisfaction shines
+          through in every piece we offer. Let us help you find the perfect
+          accessory to elevate your style and accompany you on life's timeless
+          journey.
         </div>
 
         <div class="tagline">
           <p class="tagline1">OWL</p>
+          <span class="braceLeft observe"></span>
           <p class="tagline2">WALLETS</p>
+          <span class="braceRight observe"></span>
           <p class="tagline3">&amp; MORE</p>
         </div>
-        
       </section>
 
       <section class="inventory">

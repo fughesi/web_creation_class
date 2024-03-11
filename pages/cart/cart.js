@@ -11,4 +11,4 @@ primer();
 toggle();
 navbar("nav");
 footer("footer");
-cartModal("root", getStorage("shoppingCart"));
+// cartModal("root", getStorage("shoppingCart"));
