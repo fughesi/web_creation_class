@@ -2,7 +2,7 @@
 
 #nav {
   position: fixed;
-  inset: 2rem 15% auto 15%;
+  inset: 2rem 20% auto 20%;
   z-index: 5;
 }
 
@@ -17,7 +17,7 @@
   transform-origin: left;
 
   border: 1px solid var(--accent1);
-  background-color: #fff5;
+  background-color: #fff9;
 
   & .links {
     display: flex;

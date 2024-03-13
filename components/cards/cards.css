@@ -64,69 +64,86 @@
   & > img:hover {
     scale: 1;
   }
-}
 
-.saleItem {
-  position: absolute;
-  top: 0.5rem;
-  right: -6rem;
-  z-index: 2;
+  & button {
+    background-color: blue;
+    border: none;
+    aspect-ratio: 1/1;
+    border-radius: 50%;
+    box-shadow: var(--shadow6);
+    font-size: var(--size3);
+  }
 
-  padding: 0.75rem;
-  width: 300px;
-  rotate: 45deg;
+  & .cartDecreaseBTN {
+    rotate: 180deg;
+  }
 
-  text-align: center;
-  font-size: var(--size5);
-  font-weight: bold;
-  font-family: var(--font2);
-  color: var(--black);
-  outline: 1px solid var(--accent1);
-  background-color: var(--color1);
-}
+  & .saleItem {
+    position: absolute;
+    top: 0.5rem;
+    right: -6rem;
+    z-index: 2;
 
-.itemCardName {
-  z-index: 2;
+    padding: 0.75rem;
+    width: 300px;
+    rotate: 45deg;
 
-  display: flex;
-  flex-direction: column;
-  place-items: center;
+    text-align: center;
+    font-size: var(--size5);
+    font-weight: bold;
+    font-family: var(--font2);
+    color: var(--black);
+    outline: 1px solid var(--accent1);
+    background-color: var(--color1);
+  }
 
-  padding: 0.5rem 1rem;
-  margin: 0.5rem;
-  color: var(--white);
-  border-radius: var(--radius1);
-  text-shadow: var(--shadow3);
-  backdrop-filter: blur(15px);
-  background-color: #fff9;
-  box-shadow: var(--shadow3);
-  outline: var(--outline3);
-}
+  & .itemCardPrice {
+    z-index: 2;
+  }
 
-.itemPrice {
-  z-index: 2;
-  margin: 0.2em 0;
-  font-size: var(--size6);
-}
+  & .itemCardName {
+    z-index: 2;
 
-.itemStyle {
-  font-size: 1rem;
-  margin: 0;
-}
+    display: flex;
+    flex-direction: column;
+    place-items: center;
 
-.itemName,
-.itemMaterial {
-  margin: 0;
+    padding: 0.5rem 1rem;
+    margin: 0.5rem;
+    color: var(--white);
+    border-radius: var(--radius1);
+    text-shadow: var(--shadow3);
+    backdrop-filter: blur(15px);
+    background-color: #fff9;
+    box-shadow: var(--shadow3);
+    outline: var(--outline3);
+  }
 
-  color: var(--grey4);
-  font-size: var(--size5);
-  font-family: var(--font3);
-  text-shadow: var(--shadow6);
-}
+  & .itemPrice {
+    z-index: 2;
+    margin: 0.2em 0;
+    font-size: var(--size6);
+  }
 
-.itemMaterial {
-  font-size: var(--size3);
-  font-family: var(--font1);
+  & .itemStyle {
+    font-size: 1rem;
+    margin: 0;
+  }
+
+  & .itemName,
+  & .itemMaterial {
+    margin: 0;
+
+    color: var(--grey4);
+    font-size: var(--size5);
+    font-family: var(--font3);
+    text-shadow: var(--shadow6);
+  }
+
+  & .itemMaterial {
+    font-size: var(--size3);
+    font-family: var(--font1);
+  }
 }
 
 @media screen and (min-width: 755px) {

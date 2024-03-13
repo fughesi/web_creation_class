@@ -1,12 +1,16 @@
 @import url(../../styles.css);
 
 .contactContainer {
+  margin-top: 10rem;
   display: grid;
   grid-template: auto/auto;
+  place-items: center;
 
   & h1 {
     color: var(--accent1);
     font-size: var(--size8);
+    margin: 0;
+    padding: 0;
   }
 }
 
@@ -18,8 +22,7 @@
   padding: 2rem;
 
   background-color: var(--grey4);
-  margin-top: 10rem;
-  margin-bottom: 15rem;
+  margin: 5rem 0;
 
   & legend {
     font-weight: bold;

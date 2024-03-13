@@ -1,22 +1,30 @@
 @import url("../../styles.css");
 
-#blogSection {
-  padding: 10rem 2rem 5rem;
-  width: 80vw;
+.blogContainer {
+  margin-top: 10rem;
+  width: 100vw;
+  min-height: 100vh;
 
-  & div p:first-child {
-    margin: 2rem 0 0 0;
+  display: grid;
+  place-items: center;
 
-    color: var(--color2);
-    font-size: var(--size7);
-  }
+  & #blogSection {
+    padding: 5rem 10rem;
 
-  & div p:last-child {
-    margin: 1rem 0 0 0;
-    padding: 0;
+    & div p:first-child {
+      margin: 5rem 0 0 0;
 
-    color: var(--color3);
-    font-size: var(--size4);
-    line-height: 1.5;
+      color: var(--color5);
+      font-size: var(--size7);
+    }
+
+    & div p:last-child {
+      margin: 1rem 0 0 0;
+      padding: 0;
+
+      color: var(--color3);
+      font-size: var(--size4);
+      line-height: 1.5;
+    }
   }
 }

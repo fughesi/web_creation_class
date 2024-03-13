@@ -1,7 +1,6 @@
 import { setStorage, getStorage } from "./storage.js";
 import { debounce } from "./debounce.js";
 import { CART } from "../lib/enums.js";
-import { inventory } from "../lib/inventory.js";
 
 export const cart = (product, action) => {
   let shoppingCart = getStorage("shoppingCart") || [];
@@ -111,7 +110,6 @@ export const cartModal = () => {
           "click",
           debounce((e) => {
             const item = JSON.parse(e.target.getAttribute("data"));
-            console.log(item);
             cart(item, CART.DECREASE);
             cartModal();
           }, 200)
@@ -122,7 +120,6 @@ export const cartModal = () => {
           "click",
           debounce((e) => {
             const item = JSON.parse(e.target.getAttribute("data"));
-            console.log(item);
             cart(item, CART.ADD);
             cartModal();
           }, 200)
@@ -130,9 +127,6 @@ export const cartModal = () => {
       ))
     : "";
 };
-
-cart(inventory[1], CART.ADD);
-cartModal();
 
 // docs
 // https://www.w3schools.com/jsref/met_node_appendchild.asp

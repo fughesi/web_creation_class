@@ -1,15 +1,15 @@
 select[class="rate"] {
-  border: 3px solid lime;
-  height: 5rem;
+  border: 1px solid var(--grey1);
+  height: 4rem;
   width: 15rem;
 }
 
 .stars {
-  height: 5rem;
+  height: 4rem;
   width: calc(var(--customer-rating, 0) * 5rem);
 
   background-color: red;
-  background-image: url("../../media/stars/starYellowCartoon.svg");
+  background-image: url("../../media/stars/starPointyYellow.svg");
   background-repeat: space no-repeat;
-  background-size: 5rem;
+  background-size: 4rem;
 }

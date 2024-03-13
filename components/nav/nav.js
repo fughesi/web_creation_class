@@ -15,7 +15,6 @@ export const navbar = (nav) => {
     <a href="../../pages/questions/questions.html">questions</a>
     <a href="../../pages/contact/contact.html">contact</a>
     <a href="../../pages/products/products.html">products</a>
-    <a href="../../pages/cart/cart.html">cart</a>
   </div>
 </div>
 `)

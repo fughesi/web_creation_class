@@ -1,6 +1,5 @@
 import { getStorage, setStorage } from "../../utils/storage.js";
-import { cartModal, cart } from "../../utils/cart.js";
-import { CART } from "../../lib/enums.js";
+import { cartModal } from "../../utils/cart.js";
 import { debounce } from "../../utils/debounce.js";
 
 class ReuseableComponent extends HTMLElement {
@@ -37,7 +36,7 @@ class ReuseableComponent extends HTMLElement {
       DM.setProperty("--color3", "#4e9f3d");
       DM.setProperty("--color4", "#1e5128");
       DM.setProperty("--color5", "#191a19");
-      DM.setProperty("--accent1", "#F7EC09");
+      DM.setProperty("--accent1", "#f00fa6");
       DM.setProperty("--grey1", "#333333");
       DM.setProperty("--grey2", "#666666");
       DM.setProperty("--grey3", "#999999");
@@ -51,7 +50,7 @@ class ReuseableComponent extends HTMLElement {
       DM.setProperty("--color3", "#071952");
       DM.setProperty("--color4", "#2a9c9d");
       DM.setProperty("--color5", "#116d6e");
-      DM.setProperty("--accent1", "#cd1818");
+      DM.setProperty("--accent1", "#b70000");
       DM.setProperty("--grey1", "#cccccc");
       DM.setProperty("--grey2", "#333333");
       DM.setProperty("--grey3", "#666666");
@@ -92,35 +91,9 @@ class ReuseableComponent extends HTMLElement {
         this.querySelector("#cartIcon")?.addEventListener(
           "click",
           debounce((e) => {
-            console.log(this.childNodes[3]);
             cartModal(), e.target.classList.toggle("cartModal");
           }, 100)
         );
-        document.querySelectorAll(".cartAddBTN").forEach((item) => {
-          console.log(item);
-          item.addEventListener(
-            "click",
-            debounce((e) => {
-              const item = JSON.parse(e.target.getAttribute("data"));
-              cart(item, CART.ADD);
-              console.log(item);
-              cartModal();
-            }, 200)
-          );
-        }),
-          document
-            .querySelectorAll("button.cartDecreaseBTN")
-            .forEach((item) => {
-              item.addEventListener(
-                "click",
-                debounce((e) => {
-                  const item = JSON.parse(e.target.getAttribute("data"));
-                  console.log(item);
-                  cart(item, CART.DECREASE);
-                  cartModal();
-                }, 200)
-              );
-            });
         break;
 
       case "toggle":
