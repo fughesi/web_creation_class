@@ -9,15 +9,10 @@
   place-content: center;
 
   background-size: 4rem;
-  background-color: var(--black);
+  background-color: #000;
   background-repeat: repeat-y space;
   background-image: url("../../media/footerpattern.png"),
-    radial-gradient(
-      ellipse,
-      var(--black) 0%,
-      var(--grey4) 15%,
-      var(--black) 70%
-    );
+    radial-gradient(ellipse, #252422 0%, #333333 15%, #252422 70%);
 
   & > div {
     height: 100%;
@@ -54,5 +49,5 @@
 }
 
 .footerSocials {
-  color: var(--white);
+  color: #eee;
 }

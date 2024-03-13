@@ -59,7 +59,6 @@
   left: -2rem;
   rotate: -90deg;
   font-size: var(--size2);
-  backdrop-filter: blur(15px);
 }
 
 .true {

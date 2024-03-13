@@ -1,4 +1,5 @@
 import { setStorage, getStorage } from "./storage.js";
+import { debounce } from "./debounce.js";
 import { CART } from "../lib/enums.js";
 import { inventory } from "../lib/inventory.js";
 
@@ -91,9 +92,9 @@ export const cartModal = () => {
         )}</p> 
 
 <div>
-  <button class="cartDecreaseBTN" data='${JSON.stringify(item)}'>⬆︎</button>
+  <button class="cartDecreaseBTN" data=${JSON.stringify(item)}>⬆︎</button>
  ( ${item.quantity} )
-  <button class="cartAddBTN" data='${JSON.stringify(item)}'>⬆︎</button>
+  <button class="cartAddBTN" data=${JSON.stringify(item)}>⬆︎</button>
 </div>
 
 </div>
@@ -103,10 +104,35 @@ export const cartModal = () => {
 <h1>There are currently no items in your cart</h1>
   `);
 
-  element ? (element.innerHTML = content) : "";
+  element
+    ? ((element.innerHTML = content),
+      element.querySelectorAll(".cartDecreaseBTN").forEach((btn) =>
+        btn.addEventListener(
+          "click",
+          debounce((e) => {
+            const item = JSON.parse(e.target.getAttribute("data"));
+            console.log(item);
+            cart(item, CART.DECREASE);
+            cartModal();
+          }, 200)
+        )
+      ),
+      element.querySelectorAll(".cartAddBTN").forEach((btn) =>
+        btn.addEventListener(
+          "click",
+          debounce((e) => {
+            const item = JSON.parse(e.target.getAttribute("data"));
+            console.log(item);
+            cart(item, CART.ADD);
+            cartModal();
+          }, 200)
+        )
+      ))
+    : "";
 };
 
-// cart(inventory[3], CART.ADD);
+cart(inventory[1], CART.ADD);
+cartModal();
 
 // docs
 // https://www.w3schools.com/jsref/met_node_appendchild.asp

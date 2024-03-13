@@ -24,7 +24,6 @@
   color: var(--color3);
   font-family: var(--font2);
   content: attr(name);
-  mix-blend-mode: exclusion;
 }
 
 .cardItem {
@@ -39,8 +38,9 @@
   justify-content: space-between;
 
   background-position: center;
-  background-repeat: no-repeat;
-  background-size: cover;
+  background-repeat: space;
+  background-size: contain;
+  background-color: #fff;
 
   border-radius: var(--radius1);
   box-shadow: var(--shadow3);
@@ -51,16 +51,18 @@
     top: 0;
     left: 0;
 
+    aspect-ratio: 1/1;
     width: 100%;
     height: 100%;
 
     object-fit: cover;
+    scale: 0.85;
     transition: all 2s ease;
-    transition-delay: 500ms;
+    transition-delay: 125ms;
   }
 
   & > img:hover {
-    scale: 1.25;
+    scale: 1;
   }
 }
 
@@ -78,8 +80,9 @@
   font-size: var(--size5);
   font-weight: bold;
   font-family: var(--font2);
-  color: var(--color2);
-  background-color: var(--accent1);
+  color: var(--black);
+  outline: 1px solid var(--accent1);
+  background-color: var(--color1);
 }
 
 .itemCardName {
@@ -91,12 +94,13 @@
 
   padding: 0.5rem 1rem;
   margin: 0.5rem;
-  color: var(--black);
+  color: var(--white);
   border-radius: var(--radius1);
   text-shadow: var(--shadow3);
   backdrop-filter: blur(15px);
-  background-color: #fff3;
+  background-color: #fff9;
   box-shadow: var(--shadow3);
+  outline: var(--outline3);
 }
 
 .itemPrice {
@@ -135,6 +139,9 @@
   .Slater,
   .Chief,
   .Boss,
+  .Metro,
+  .Classic,
+  .Hooligan,
   .Barbie {
     grid-column-end: span 2;
   }
@@ -148,6 +155,7 @@
   .Bossman img,
   .Monster img,
   .Chief img,
+  .Classic img,
   .Barbie img {
     width: 100%;
   }

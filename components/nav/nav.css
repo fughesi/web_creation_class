@@ -1,3 +1,5 @@
+@import url("../../styles.css");
+
 #nav {
   position: fixed;
   inset: 2rem 15% auto 15%;
@@ -14,7 +16,7 @@
 
   transform-origin: left;
 
-  border: 1px solid var(--grey4);
+  border: 1px solid var(--accent1);
   background-color: #fff5;
 
   & .links {
@@ -23,12 +25,12 @@
 
     width: 100%;
     transition: all 1000ms;
-    backdrop-filter: blur(15px);
+    backdrop-filter: blur(20px);
 
     & a {
       padding: 1.5rem;
       font-size: var(--size4);
-      color: var(--grey4);
+      color: var(--accent1);
       font-variant: small-caps;
       transition: all 350ms;
     }

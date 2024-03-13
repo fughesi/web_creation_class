@@ -1,22 +1,23 @@
 @import url("./defaults.css");
 
 .hero {
-  position: relative;
-  /* min-height: 200vh; */
   width: 100%;
   z-index: 1;
 
   display: grid;
   padding-top: 10rem;
-  grid-template-rows: 50vh 30rem 30rem 10rem;
+  grid-template-columns: repeat(5, 1fr);
+  grid-template-rows: 60vh 30rem 30rem 10rem;
   grid-template-areas:
     ". a f b ."
     "d d d d d"
     ". . . . ."
-    ". . g . c"
-    ". . g . ."
-    ". . g . ."
-    "e e e e e";
+    ". g g g ."
+    ". g g g ."
+    ". g g g ."
+    "e e e e e"
+    "h h h h h"
+    "i i i i i";
   grid-gap: 0.5rem;
   place-items: center;
 
@@ -33,8 +34,8 @@
     & p {
       margin: 0;
       line-height: 1;
+      font-size: var(--headline3);
       color: var(--black);
-      font-size: var(--size9);
     }
 
     & .braceLeft,
@@ -45,7 +46,7 @@
       display: inline;
       font-size: var(--size9);
       font-family: var(--font3);
-      transform: translateX(-2rem);
+      /* transform: translateX(-2rem); */
       background-color: orange;
     }
 
@@ -57,8 +58,9 @@
 
   .owl {
     grid-area: d;
+    position: relative;
+    z-index: 9;
     opacity: 0;
-    z-index: 2;
   }
 
   .observe {
@@ -67,27 +69,29 @@
     width: 30rem;
     height: 10rem;
 
-    background-color: red;
-
     transform: translate(8rem, 1rem);
     transition: all 2500ms ease;
+
+    text-align: center;
+    font-size: var(--headline1);
   }
 
   & div[aria-label="about us"] {
     grid-area: g;
-    height: 25rem;
-    width: 30rem;
+
+    height: max-content;
     overflow-wrap: break-word;
     overflow-y: scroll;
     overflow-x: hidden;
 
-    padding: 2.5rem 1.5rem;
-    box-shadow: var(--shadow1);
-    color: var(--grey4);
+    padding: 2.5rem;
+    color: var(--grey1);
     font-family: var(--font3);
     font-size: var(--size5);
+    box-shadow: var(--shadow1);
+    border-radius: var(--radius1);
     border: 1px solid var(--grey4);
-    background-color: var(--color1);
+    background-color: var(--color3);
     -ms-overflow-style: none;
     scrollbar-width: none;
 
@@ -95,9 +99,9 @@
       display: none;
     }
   }
-}
 
-.inventory {
-  position: relative;
-  z-index: 2;
+  & .inventory {
+    margin-top: 20rem;
+    grid-area: h;
+  }
 }

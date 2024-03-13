@@ -8,7 +8,7 @@ import { visibility } from "./utils/visibility.js";
 import { navbar } from "./components/nav/nav.js";
 import { signature } from "./lib/signature.js";
 import { parallax } from "./utils/parallax.js";
-import { mutation } from "./utils/mutation.js";
+import { scale } from "./utils/scale.js";
 
 floater();
 signature();
@@ -25,8 +25,8 @@ parallax(".tagline3", 0.3);
 inventoryCards("watches", "watches");
 inventoryCards("wallets", "wallets");
 
-createObserver(".observe", "move", "0px 0px 0px 0px", 0.2);
+createObserver(".observe", "move", "0px 0px 0px 0px", 0.0);
 
-visibility(".owl", 0.0015);
+visibility(".owl", 0.002);
 
-// mutation("cartModalDiv");
+scale(".owl", 0.0015);

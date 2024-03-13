@@ -1,6 +1,7 @@
 import { getStorage, setStorage } from "../../utils/storage.js";
 import { cartModal, cart } from "../../utils/cart.js";
 import { CART } from "../../lib/enums.js";
+import { debounce } from "../../utils/debounce.js";
 
 class ReuseableComponent extends HTMLElement {
   constructor() {
@@ -31,20 +32,32 @@ class ReuseableComponent extends HTMLElement {
     const DM = document.documentElement.style;
     if (this.toggle === true) {
       DM.setProperty("color-scheme", "dark");
-      DM.setProperty("--color1", "#5f8670");
-      DM.setProperty("--color2", "#ff9800");
-      DM.setProperty("--color3", "#b80000");
-      DM.setProperty("--color4", "#820300");
-      DM.setProperty("--color5", "#ff5400");
-      DM.setProperty("--accent1", "#eb5e28");
+      DM.setProperty("--color1", "#27374d");
+      DM.setProperty("--color2", "#d8e9a8");
+      DM.setProperty("--color3", "#4e9f3d");
+      DM.setProperty("--color4", "#1e5128");
+      DM.setProperty("--color5", "#191a19");
+      DM.setProperty("--accent1", "#F7EC09");
+      DM.setProperty("--grey1", "#333333");
+      DM.setProperty("--grey2", "#666666");
+      DM.setProperty("--grey3", "#999999");
+      DM.setProperty("--grey4", "#cccccc");
+      DM.setProperty("--white", "#252422");
+      DM.setProperty("--black", "#eeeeee");
     } else {
       DM.setProperty("color-scheme", "light");
-      DM.setProperty("--color1", "#fffcf2");
-      DM.setProperty("--color2", "#ccc5b9");
-      DM.setProperty("--color3", "#403d39");
-      DM.setProperty("--color4", "#252422");
-      DM.setProperty("--color5", "#ff5400");
-      DM.setProperty("--accent1", "#eb5e28");
+      DM.setProperty("--color1", "#e1eded");
+      DM.setProperty("--color2", "#cfeded");
+      DM.setProperty("--color3", "#071952");
+      DM.setProperty("--color4", "#2a9c9d");
+      DM.setProperty("--color5", "#116d6e");
+      DM.setProperty("--accent1", "#cd1818");
+      DM.setProperty("--grey1", "#cccccc");
+      DM.setProperty("--grey2", "#333333");
+      DM.setProperty("--grey3", "#666666");
+      DM.setProperty("--grey4", "#999999");
+      DM.setProperty("--black", "#252422");
+      DM.setProperty("--white", "#eeeeee");
     }
     setStorage("color-scheme", this.toggle);
   }
@@ -76,25 +89,38 @@ class ReuseableComponent extends HTMLElement {
         }"  id="cartIcon" count="${5}" />
           <div id="cartModalDiv"></div>
           `;
-        this.addEventListener(
+        this.querySelector("#cartIcon")?.addEventListener(
           "click",
-          (e) => e.target.classList.toggle("cartModal"),
-          cartModal()
+          debounce((e) => {
+            console.log(this.childNodes[3]);
+            cartModal(), e.target.classList.toggle("cartModal");
+          }, 100)
         );
-        this.querySelectorAll(".cartAddBTN")?.forEach((item) => {
-          item.addEventListener("click", (e) => {
-            const item = JSON.parse(e.target.getAttribute("data"));
-            cart(item, CART.ADD);
-            cartModal();
-          });
-        }),
-          this.querySelectorAll(".cartDecreaseBTN")?.forEach((item) => {
-            item.addEventListener("click", (e) => {
+        document.querySelectorAll(".cartAddBTN").forEach((item) => {
+          console.log(item);
+          item.addEventListener(
+            "click",
+            debounce((e) => {
               const item = JSON.parse(e.target.getAttribute("data"));
-              cart(item, CART.DECREASE);
-              // cartModal("cartModalDiv", this.cartItems);
+              cart(item, CART.ADD);
+              console.log(item);
+              cartModal();
+            }, 200)
+          );
+        }),
+          document
+            .querySelectorAll("button.cartDecreaseBTN")
+            .forEach((item) => {
+              item.addEventListener(
+                "click",
+                debounce((e) => {
+                  const item = JSON.parse(e.target.getAttribute("data"));
+                  console.log(item);
+                  cart(item, CART.DECREASE);
+                  cartModal();
+                }, 200)
+              );
             });
-          });
         break;
 
       case "toggle":
@@ -122,6 +148,7 @@ export const reuseableComponent = customElements.define(
 // https://developer.mozilla.org/en-US/docs/Web/API/HTMLElement
 // https://developer.mozilla.org/en-US/docs/Web/API/Node/firstChild
 // https://developer.mozilla.org/en-US/docs/Web/API/Element/classList
+// https://developer.mozilla.org/en-US/docs/Web/API/Event/stopPropagation
 // https://developer.mozilla.org/en-US/docs/Web/API/Document/documentElement
 // https://developer.salesforce.com/docs/platform/lwc/guide/create-lifecycle-hooks-dom.html
 // https://developer.mozilla.org/en-US/docs/Web/API/CustomElementRegistry/define#valid_custom_element_names
