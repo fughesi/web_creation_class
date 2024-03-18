@@ -1,12 +1,9 @@
-import { cartModal } from "./cart.js";
-
 export const mutation = (elem) => {
   const element = document.getElementById(String(elem));
 
   const mutated = new MutationObserver((mutations) => {
     mutations.forEach((item) => {
-      console.log(mutations);
-      cartModal(element);
+      console.log(item);
     });
   });
 

@@ -7,7 +7,7 @@
   display: grid;
   padding-top: 10rem;
   grid-template-columns: repeat(5, 1fr);
-  grid-template-rows: 60vh 30rem 30rem 10rem;
+  grid-template-rows: 60svh 30rem 30rem 10rem;
   grid-template-areas:
     ". a f b ."
     "d d d d d"

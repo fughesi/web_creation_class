@@ -111,7 +111,6 @@ export const cartModal = () => {
           debounce((e) => {
             const item = JSON.parse(e.target.getAttribute("data"));
             cart(item, CART.DECREASE);
-            cartModal();
           }, 200)
         )
       ),
@@ -121,7 +120,6 @@ export const cartModal = () => {
           debounce((e) => {
             const item = JSON.parse(e.target.getAttribute("data"));
             cart(item, CART.ADD);
-            cartModal();
           }, 200)
         )
       ))

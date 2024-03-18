@@ -48,7 +48,7 @@
 
     border-radius: 50%;
     background-color: var(--color3);
-    box-shadow: 1px 1px 5px var(--color3);
+    box-shadow: 1px 1px 5px #333;
   }
 }
 
@@ -63,7 +63,7 @@
 
 .true {
   background-color: var(--grey1);
-  box-shadow: inset 0 0 5px var(--color3);
+  box-shadow: inset 1px 1px 5px var(--color5);
   justify-content: end;
 }
 

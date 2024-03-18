@@ -14,12 +14,12 @@
   background-color: #fff9;
   box-shadow: var(--shadow4);
   font-size: var(--size3);
-  outline: 1px solid var(--color2);
+  outline: 1px solid var(--accent1);
   border-radius: 1.5rem 0 0 0;
 
   cursor: pointer;
   user-select: none;
-  transition: transform 1000ms;
+  transition: all 1000ms;
 
   display: flex;
   flex-direction: column;

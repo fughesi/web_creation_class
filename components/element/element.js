@@ -17,7 +17,6 @@ class ReuseableComponent extends HTMLElement {
     this.msg = this.getAttribute("msg") || "";
     this.img = this.getAttribute("img") || "";
     this.alt = this.getAttribute("alt") || "";
-    this.cartItems = getStorage("shoppingCart");
 
     this.render(this.elem);
   }
@@ -36,7 +35,7 @@ class ReuseableComponent extends HTMLElement {
       DM.setProperty("--color3", "#4e9f3d");
       DM.setProperty("--color4", "#1e5128");
       DM.setProperty("--color5", "#191a19");
-      DM.setProperty("--accent1", "#f00fa6");
+      DM.setProperty("--accent1", "#397bdb");
       DM.setProperty("--grey1", "#333333");
       DM.setProperty("--grey2", "#666666");
       DM.setProperty("--grey3", "#999999");
@@ -49,8 +48,8 @@ class ReuseableComponent extends HTMLElement {
       DM.setProperty("--color2", "#cfeded");
       DM.setProperty("--color3", "#071952");
       DM.setProperty("--color4", "#2a9c9d");
-      DM.setProperty("--color5", "#116d6e");
-      DM.setProperty("--accent1", "#b70000");
+      DM.setProperty("--color5", "#2d03ff");
+      DM.setProperty("--accent1", "cornflowerblue");
       DM.setProperty("--grey1", "#cccccc");
       DM.setProperty("--grey2", "#333333");
       DM.setProperty("--grey3", "#666666");
@@ -105,7 +104,7 @@ class ReuseableComponent extends HTMLElement {
 
       default:
         console.log(
-          "Must provide an 'elem' prop with one of the following elements: ['button', 'cta', 'toggle']"
+          "Must provide an 'elem' prop with one of the following elements: ['button','modal', 'cta', 'toggle']"
         );
     }
   }

@@ -23,7 +23,7 @@
 
   & div {
     padding: 0.25rem;
-    box-shadow: var(--shadow2);
+    box-shadow: var(--shadow7);
 
     overflow: hidden;
 
@@ -41,7 +41,7 @@
       grid-area: a;
       position: relative;
       font-size: var(--size8);
-      text-shadow: var(--shadow2);
+      text-shadow: var(--shadow3);
       margin: 0;
     }
 
@@ -57,7 +57,7 @@
       grid-area: b;
       position: relative;
       font-size: var(--size6);
-      text-shadow: var(--shadow2);
+      text-shadow: var(--shadow3);
       color: var(--color3);
       text-decoration: underline 3px solid var(--accent1);
       margin: 1.5rem 0 1rem 0;
@@ -76,7 +76,7 @@
     & p:nth-child(3) {
       position: relative;
       grid-area: c;
-      text-shadow: var(--shadow2);
+      text-shadow: var(--shadow3);
       font-size: var(--size5);
     }
 
@@ -92,7 +92,7 @@
     & p:nth-child(4) {
       grid-area: d;
       font-size: var(--size4);
-      color: var(--color2);
+      color: var(--color3);
       text-align: center;
       margin: 0;
     }

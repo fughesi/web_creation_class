@@ -56,13 +56,6 @@
     height: 100%;
 
     object-fit: cover;
-    scale: 0.85;
-    transition: all 2s ease;
-    transition-delay: 125ms;
-  }
-
-  & > img:hover {
-    scale: 1;
   }
 
   & button {
@@ -93,12 +86,8 @@
     font-weight: bold;
     font-family: var(--font2);
     color: var(--black);
-    outline: 1px solid var(--accent1);
+    outline: var(--outline3);
     background-color: var(--color1);
-  }
-
-  & .itemCardPrice {
-    z-index: 2;
   }
 
   & .itemCardName {
@@ -116,13 +105,25 @@
     backdrop-filter: blur(15px);
     background-color: #fff9;
     box-shadow: var(--shadow3);
-    outline: var(--outline3);
+    /* outline: var(--outline3); */
   }
 
+  & .itemName,
+  & .itemMaterial,
   & .itemPrice {
-    z-index: 2;
-    margin: 0.2em 0;
-    font-size: var(--size6);
+    margin: 0rem;
+
+    color: var(--color2);
+    font-size: var(--size5);
+    font-family: var(--font3);
+    text-shadow: var(--shadow7);
+    user-select: none;
+    text-decoration: underline 1px solid var(--accent1);
+  }
+
+  & .itemMaterial {
+    font-size: var(--size3);
+    font-family: var(--font1);
   }
 
   & .itemStyle {
@@ -130,19 +131,35 @@
     margin: 0;
   }
 
-  & .itemName,
-  & .itemMaterial {
-    margin: 0;
+  & .itemCardPrice {
+    z-index: 2;
+    padding: 1rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 
-    color: var(--grey4);
-    font-size: var(--size5);
-    font-family: var(--font3);
-    text-shadow: var(--shadow6);
+    width: max-content;
+    backdrop-filter: blur(15px);
+    background-color: #fff9;
+    box-shadow: var(--shadow3);
+    border-radius: var(--radius1);
+
+    & .itemPrice {
+      font-size: var(--size6);
+      font-family: var(--font1);
+      font-weight: bold;
+    }
+
+    & button {
+      color: #fff;
+      font-size: var(--size2);
+      background-color: var(--accent1);
+    }
   }
 
-  & .itemMaterial {
-    font-size: var(--size3);
-    font-family: var(--font1);
+  &:hover .itemCardPrice,
+  &:focus .itemCardPrice {
+    translate: 0rem 0rem;
   }
 }
 

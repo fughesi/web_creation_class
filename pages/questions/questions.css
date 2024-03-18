@@ -20,7 +20,7 @@
   & div p:nth-child(1) {
     margin: 0.2em 0;
 
-    color: var(--color2);
+    color: var(--color3);
     font-size: var(--size6);
     font-family: var(--font3);
   }
@@ -29,8 +29,8 @@
     margin: 0;
     padding: 1rem;
 
-    background-color: var(--color2);
-    color: var(--color3);
+    background-color: var(--color3);
+    color: var(--color2);
     font-size: var(--size4);
     font-family: var(--font1);
   }

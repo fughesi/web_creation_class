@@ -14,9 +14,7 @@
   place-items: center;
   margin: auto;
 
-  transform-origin: left;
-
-  border: 1px solid var(--accent1);
+  outline: var(--outline3);
   background-color: #fff9;
 
   & .links {
